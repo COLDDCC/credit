@@ -1,0 +1,178 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Credit conversion hub 鈥?ECTS 鈫?US credits</title>
+<meta name="description" content="Convert between ECTS and US semester or quarter credit hours, and understand what the resulting totals mean for a US application. Sources cited.">
+<!-- TODO 涓婄嚎鍓嶆浛鎹㈡湰鏂囦欢鍐呮墍鏈?example.com 涓虹湡瀹炲煙鍚嶏紙canonical / og:url 鍏?2 澶勶級 -->
+<link rel="canonical" href="https://example.com/credit-conversion">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/credit-conversion">
+<meta property="og:title" content="Credit conversion hub 鈥?ECTS 鈫?US credits">
+<meta property="og:description" content="Both directions of the ECTS 鈫?US credit conversion, with a read on what your total means for a US application.">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://example.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<style>
+.hub{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+.hub a{
+  background:var(--card);border:1.5px solid var(--rule);padding:22px;
+  display:block;color:var(--ink);text-decoration:none;
+}
+.hub a:hover{border-color:var(--eu)}
+.hub .dir{
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--us);display:block;margin-bottom:10px;
+}
+.hub h3{color:var(--eu);margin-bottom:6px}
+.hub p{font-size:14.5px;color:var(--muted);margin-bottom:0}
+.hub .go{
+  font-family:var(--display);font-size:12.5px;font-weight:700;color:var(--eu);
+  display:block;margin-top:14px;
+}
+.hub .go::after{content:" 鈫?}
+
+@media (max-width:760px){ .hub{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="site-nav">
+  <a class="brand" href="index.html">CreditLab<small>transcripts, translated</small></a>
+  <nav aria-label="Converters">
+    <a href="index.html">Home</a>
+    <a href="credit-conversion.html" aria-current="page">Credit conversion</a>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US</a>
+    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ielts-to-toefl.html">Languages</a>
+    <a href="country-guides.html">Countries</a>
+  </nav>
+</header>
+
+<div class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><span aria-current="page">Credit conversion</span></li>
+  </ol>
+</div>
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Credit conversion</span>
+    <span>路</span>
+    <span><b>Verified against the ECTS Users' Guide</b></span>
+  </div>
+  <h1>Credit <span class="sys-eu">conversion</span></h1>
+  <p class="standfirst">The ECTS 鈫?US credits converter pair. Both directions, three methods each, quarter credits on every readout, and a degree-equivalence read that tells you whether the total is enough 鈥?not just what it is.</p>
+</header>
+
+<section>
+  <h2>Pick a direction</h2>
+  <div class="hub">
+    <a href="ects-to-us-credits.html">
+      <span class="dir">European 鈫?US</span>
+      <h3>ECTS to US credits</h3>
+      <p>Convert ECTS to semester and quarter credit hours, then see where your total lands against US bachelor's requirements.</p>
+      <span class="go">Open the converter</span>
+    </a>
+
+    <a href="american-credit-hours-to-ects.html">
+      <span class="dir">US 鈫?European</span>
+      <h3>US credit hours to ECTS</h3>
+      <p>Turn US semester or quarter hours into ECTS, and find out which European qualification level your total matches.</p>
+      <span class="go">Open the converter</span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>Why the conversion isn't one to one</h2>
+  <p>The two systems count different things. That is the whole reason a conversion factor exists, and it is why every honest converter returns an approximation rather than an exact figure.</p>
+
+  <div class="split">
+    <div>
+      <div class="sys-name">ECTS</div>
+      <div class="unit">25 鈥?30 h</div>
+      <p>per credit, measuring <strong>total student workload</strong> 鈥?lectures, labs, assignments, independent study and exam preparation. A full-time year is 60 ECTS, or roughly 1,500鈥?,800 hours.</p>
+    </div>
+    <div>
+      <div class="sys-name">US semester credit</div>
+      <div class="unit">鈮?45 h</div>
+      <p>per credit, built from <strong>classroom contact time</strong> 鈥?about 15 contact hours plus an expected 30 hours of outside work. A full-time year is about 30 semester credits.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:20px">Divide the two full-time years into each other and you get the familiar 2:1 ratio: 60 ECTS a year against 30 semester credits a year. Compare raw workload hours instead and the ratio lands somewhere between 1.5:1 and 1.8:1. All three figures are defensible, which is exactly why a conversion cannot be exact 鈥?but 2:1 is the one evaluators and admissions offices actually apply.</p>
+</section>
+
+<section>
+  <h2>Common totals at a glance</h2>
+  <table>
+    <thead>
+      <tr><th>Qualification</th><th>ECTS</th><th>Semester cr</th><th>Quarter cr</th><th>Full-time yrs</th></tr>
+    </thead>
+    <tbody>
+      <tr><td class="deg">One semester abroad</td><td>30</td><td>15</td><td>22.5</td><td>0.5</td></tr>
+      <tr><td class="deg">One full academic year</td><td>60</td><td>30</td><td>45</td><td>1.0</td></tr>
+      <tr><td class="deg">European bachelor's, 3 years</td><td>180</td><td>90</td><td>135</td><td>3.0</td></tr>
+      <tr><td class="deg">European bachelor's, 4 years</td><td>240</td><td>120</td><td>180</td><td>4.0</td></tr>
+      <tr><td class="deg">European master's, 1 year</td><td>60</td><td>30</td><td>45</td><td>1.0</td></tr>
+      <tr><td class="deg">European master's, 2 years</td><td>120</td><td>60</td><td>90</td><td>2.0</td></tr>
+      <tr><td class="deg">US bachelor's requirement</td><td>240 鈥?260</td><td>120 鈥?130</td><td>180 鈥?195</td><td>4.0</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">Quarter credits are derived by converting to semester credits first, then multiplying by 1.5. One semester credit equals 1.5 quarter credits.</p>
+</section>
+
+<section>
+  <h2>Sources</h2>
+  <div class="sources">
+    <ul>
+      <li><span class="what">ECTS definition, annual load, workload hours</span><span class="who"><a href="https://education.ec.europa.eu/node/1240" rel="nofollow noopener" target="_blank">European Commission 鈥?ECTS Users' Guide 2015</a></span></li>
+      <li><span class="what">Degree cycle structure and recognition</span><span class="who"><a href="https://www.enic-naric.net/ects---european-credit-transfer-and-accumulation-system.aspx" rel="nofollow noopener" target="_blank">ENIC-NARIC networks 鈥?ECTS and qualification recognition</a></span></li>
+      <li><span class="what">US semester credit hour definition</span><span class="who"><a href="https://www.ecfr.gov/current/title-34/subtitle-B/chapter-VI/part-600/subpart-A/section-600.2" rel="nofollow noopener" target="_blank">34 CFR 搂 600.2 鈥?federal definition of a credit hour</a></span></li>
+    </ul>
+    <p class="verified">Figures last verified July 2026 路 Conversion ratios are approximations, not official standards</p>
+  </div>
+</section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-col">
+    <strong>Converters</strong>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="credit-conversion.html">Credit conversion hub</a>
+  </div>
+  <div class="foot-col">
+    <strong>Language scores</strong>
+    <a href="ielts-to-toefl.html">IELTS 鈫?TOEFL</a>
+  </div>
+  <div class="foot-col">
+    <strong>Country guides</strong>
+    <a href="country-guides.html">All country guides</a>
+    <a href="germany-to-gpa.html">Germany</a>
+    <a href="netherlands-to-gpa.html">Netherlands</a>
+    <a href="france-to-gpa.html">France</a>
+    <a href="india-to-gpa.html">India</a>
+    <a href="china-to-gpa.html">China</a>
+  </div>
+  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+</footer>
+
+<script defer src="assets/js/site.js"></script>
+</body>
+</html>

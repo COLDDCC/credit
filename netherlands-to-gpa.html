@@ -1,0 +1,509 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dutch Grade to US GPA 鈥?Netherlands 1鈥?0 Scale Conversion</title>
+<meta name="description" content="Convert a Dutch university grade (1鈥?0) to a US 4.0 GPA. Nuffic's 1鈥?0 scale with a 6 pass, a culture-based band mapping, and the simple linear shortcut 鈥?side by side, because a Dutch 8 is not an 80%. Sources cited.">
+<!-- TODO 涓婄嚎鍓嶆浛鎹㈡湰鏂囦欢鍐呮墍鏈?example.com 涓虹湡瀹炲煙鍚嶏紙canonical / og:url / schema 鍐呯殑 URL 鍏?5 澶勶級 -->
+<link rel="canonical" href="https://example.com/netherlands-to-gpa">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/netherlands-to-gpa">
+<meta property="og:title" content="Dutch Grade to US GPA 鈥?Netherlands 1鈥?0 Scale Conversion">
+<meta property="og:description" content="The Dutch 1鈥?0 scale to US 4.0, three ways: culture-based bands, Nuffic's scale, and the linear shortcut. A Dutch 7 is not a 70%.">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://example.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:title" content="Dutch Grade to US GPA Converter">
+<meta name="twitter:description" content="Netherlands 1鈥?0 鈫?US 4.0, with the grading culture included.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://example.com/netherlands-to-gpa#tool",
+      "name": "Dutch Grade to US GPA Converter",
+      "url": "https://example.com/netherlands-to-gpa",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any modern web browser",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Dutch 1鈥?0 grade to US 4.0 GPA",
+        "Nuffic-style scale with grading-culture context",
+        "Culture-based band mapping",
+        "Admissions readout against common US cutoffs"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Country guides", "item": "https://example.com/country-guides" },
+        { "@type": "ListItem", "position": 3, "name": "Netherlands" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://example.com/netherlands-to-gpa#page",
+      "url": "https://example.com/netherlands-to-gpa",
+      "name": "Dutch Grade to US GPA Converter",
+      "dateModified": "2026-08-12",
+      "primaryImageOfPage": null,
+      "mainEntity": { "@id": "https://example.com/netherlands-to-gpa#tool" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert a Dutch grade to a US GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The Dutch 1鈥?0 scale maps to US bands after accounting for grading culture: 8.5+ to 4.0, 8.0 to roughly 3.7, 7.0鈥?.5 to 3.0鈥?.3, and 6.0 (the pass) to about 2.3. A plain 脳0.4 shortcut understates Dutch grades badly, because 9s and 10s are almost never awarded in the Netherlands."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a Dutch 7 a good grade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. A 7 is 'ruim voldoende' 鈥?a solid, respectable grade, roughly a US B (3.0-3.3). Treating a 7 as 70% and mapping to a C is the classic error. Dutch grades cluster between 6 and 8 because 9 and 10 are rarely awarded by design."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the passing grade in the Netherlands?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The minimum pass is 6 on the 1鈥?0 scale, per Nuffic and Dutch university practice. At some institutions a 5.5 may be compensated or rounded depending on the rules of the programme and the resit policy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does WES publish a Dutch grade conversion table?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. WES evaluates each course using its own institutional methodology and publishes no official table. The band values on this page are reconstructions of common practice for planning 鈥?your actual WES result is course-by-course and institution-specific."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the Dutch scale so different from the US one?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Dutch grading is stricter by design: a 10 is reserved for near-perfection and 9s are exceptional, so the realistic ceiling is an 8. The same performance that earns an A in the US typically lands at 7鈥? in the Netherlands. Converting number-to-number without this context produces misleadingly low results."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* page-specific tweaks only; everything else lives in site.css */
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="site-nav">
+  <a class="brand" href="index.html">CreditLab<small>transcripts, translated</small></a>
+  <nav aria-label="Converters">
+    <a href="index.html">Home</a>
+    <a href="grade-conversion.html">Grades</a>
+    <a href="credit-conversion.html">Credit conversion</a>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US</a>
+    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ielts-to-toefl.html">Languages</a>
+    <a href="country-guides.html" aria-current="page">Countries</a>
+  </nav>
+</header>
+
+<div class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="country-guides.html">Country guides</a></li>
+    <li><span aria-current="page">Netherlands</span></li>
+  </ol>
+</div>
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Country guide 路 Netherlands</span>
+    <span>路</span>
+    <span><b>A 7 is not a 70% 鈥?it's a solid grade</b></span>
+  </div>
+  <h1><span class="sys-eu">Dutch grade</span> to <span class="sys-us">US GPA</span></h1>
+  <p class="standfirst">The Netherlands grades out of 10 with a pass at 6, and it grades harshly: 9s and 10s are almost never awarded, so the realistic ceiling is an 8. This converter gives you three estimates 鈥?a culture-based band map, a Nuffic-framed scale, and the linear shortcut 鈥?because reading a Dutch 7 as 70% is the standard applicant error.</p>
+</header>
+
+<!-- ============ CONVERTER ============ -->
+<div class="conv">
+  <div class="pane pane-in">
+    <div class="pane-tag">Your system</div>
+
+    <label for="grade">Dutch grade (1.0 鈥?10, pass at 6)</label>
+    <input type="number" id="grade" value="7.0" min="1" max="10" step="0.5" inputmode="decimal">
+
+    <div class="methods" role="radiogroup" aria-label="Conversion method">
+      <label class="m on" for="m1">
+        <input type="radio" name="method" id="m1" value="band" checked>
+        <span>
+          <span class="m-name">Culture-based bands</span>
+          <span class="m-note">Accounts for the Dutch habit of never handing out 9s and 10s 鈥?the most honest read.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m2">
+        <input type="radio" name="method" id="m2" value="nuffic">
+        <span>
+          <span class="m-name">Nuffic-framed</span>
+          <span class="m-note">Framed on Nuffic's 1鈥?0 scale and descriptions, mapped by meaning rather than number.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m3">
+        <input type="radio" name="method" id="m3" value="linear">
+        <span>
+          <span class="m-name">Linear 脳 0.4 (rough)</span>
+          <span class="m-note">Grade 脳 0.4. Fast but understates Dutch grades 鈥?don't use it as anything but a floor.</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="pane pane-out" aria-live="polite">
+    <div class="pane-tag">US equivalent</div>
+
+    <div class="readout">
+      <div class="r-label">US GPA (4.0)</div>
+      <div class="r-value" id="gpa">3.0<span class="r-unit">/4.0</span></div>
+    </div>
+
+    <div class="readout">
+      <div class="r-label">Dutch descriptor</div>
+      <div class="r-value minor" id="descr">Ruim voldoende<span class="r-unit">7 on Dutch scale</span></div>
+    </div>
+
+    <div class="workload">
+      <div>Method &nbsp;<b id="m-name">Culture-based bands</b></div>
+      <div>GPA points &nbsp;<b id="points">3.0</b></div>
+      <div>Interpretation &nbsp;<b id="sum">grading culture included</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VERDICT ============ -->
+<div class="verdictbox">
+  <div class="verdictbox-tag">Where this sits for a US application</div>
+  <div aria-live="polite">
+    <p class="gverdict" id="verdict">A Dutch 7 is roughly a <em>3.0鈥?.3</em> US GPA 鈥?solid standing, not a 70%.</p>
+    <p class="gverdict-note" id="verdict-note">Most US master's programmes want a 3.0 or better; selective ones look for 3.5+, which is roughly a Dutch 7.5鈥?.0. The exact figure depends on the evaluator's course-by-course read, so treat it as a band, not a verdict.</p>
+  </div>
+
+  <div class="gscale" id="gscale">
+    <div class="gtrack"></div>
+    <div id="gticks"></div>
+    <div class="you" id="you" style="left:0%">
+      <div class="you-dot"></div>
+      <div class="you-lab" id="you-lab">you 路 3.0</div>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <span class="rel-tag">In the same family</span>
+  <a href="country-guides.html">All country guides</a>
+  <a href="percentage-to-gpa.html">Percentage 鈫?GPA converter</a>
+  <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+</div>
+
+<!-- ============ WHY CULTURE ============ -->
+<section>
+  <h2>Why a Dutch 7 is a good grade</h2>
+  <p>The Dutch scale runs 1 to 10 with 10 as 'excellent', but it is used differently from scales with the same shape. A 10 is reserved for near-perfection, 9s are exceptional, and the grades that students actually earn cluster between 6 and 8. A Dutch 8 is a genuinely strong result 鈥?an '8.0+ average' is the threshold many universities use for cum laude.</p>
+
+  <div class="split">
+    <div>
+      <div class="sys-name">Netherlands</div>
+      <div class="unit">7 = solid</div>
+      <p>Ruim voldoende (7) and goed (8) are the strong, common grades. Voldoende (6) is a pass. Zes-en-halve (6.5) sits between. A 9 is rare; a 10 is almost never given.</p>
+    </div>
+    <div>
+      <div class="sys-name">US 4.0</div>
+      <div class="unit">70% 鈮?C</div>
+      <p>On a typical US letter scale 70% is a C (2.0). Mapping a Dutch 7 to 70% therefore understates the same work because Dutch professors are told not to hand out high numbers freely.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:20px">This is the crux: the US system rewards grade inflation, the Dutch system deliberately resists it. A Dutch 7 means 'comfortably meets the standard' 鈥?not 'barely passed'. That is why culture-based bands are a more honest conversion than a straight proportion, and why evaluators read the transcript, the institution, and the grading culture together.</p>
+
+  <p style="margin-top:16px">And if your transcript carries ECTS as well, grades aren't the only thing that needs translating 鈥?<a href="ects-to-us-credits.html">convert your European credits to US credits</a> in the same pass.</p>
+</section>
+
+<!-- ============ METHODS ============ -->
+<section>
+  <h2>Three ways to run the conversion</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="num">METHOD 01</div>
+      <h3>Culture-based bands</h3>
+      <p>Maps Dutch grades to US bands with the grading culture built in. This is the most honest read for planning: a Dutch 8, the practical ceiling, lands around a 3.7鈥?.0 US GPA.</p>
+      <div class="formula">8.5+ 鈫?4.0 路 8.0 鈫?3.7<br>7.0鈥?.5 鈫?3.0鈥?.3 路 6.0 鈫?2.3</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 02</div>
+      <h3>Nuffic-framed</h3>
+      <p>Framed on Nuffic's official 1鈥?0 descriptions 鈥?excellent, very good, good, satisfactory 鈥?and mapped by meaning rather than by number. Same spirit as bands, with the Dutch authority behind the scale.</p>
+      <div class="formula">10 鈫?4.0 路 8 鈫?3.7<br>7 鈫?3.0 路 6 鈫?2.0鈥?.5</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 03</div>
+      <h3>Linear 脳 0.4 (rough)</h3>
+      <p>Grade 脳 0.4. Simple and widely seen, but it treats the scales as proportional, which they are not. It consistently understates Dutch grades 鈥?treat it as a floor, not an estimate.</p>
+      <div class="formula">7 鈫?2.8 路 8 鈫?3.2</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <h3>Never report a converted GPA as official</h3>
+    <p>Report what your transcript says first. Most US programmes either take it as-is or require a professional evaluation. If you convert anywhere, state the method alongside the number 鈥?a Dutch 7 is not a US 2.8 just because 脳0.4 says so.</p>
+  </div>
+</section>
+
+<!-- ============ REFERENCE ============ -->
+<section>
+  <h2>The Dutch scale at a glance</h2>
+  <table>
+    <thead>
+      <tr><th>Dutch grade</th><th>Descriptor (Dutch)</th><th>Meaning</th><th>Typical US GPA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>10</td><td>Uitmuntend</td><td class="deg">Excellent 鈥?almost never awarded</td><td>4.0</td></tr>
+      <tr><td>9</td><td>Zeer goed</td><td class="deg">Very good 鈥?exceptional</td><td>4.0</td></tr>
+      <tr><td>8</td><td>Goed</td><td class="deg">Good 鈥?the realistic ceiling, cum laude territory</td><td>3.7</td></tr>
+      <tr><td>7.5</td><td>Ruim voldoende</td><td class="deg">Comfortably above satisfactory</td><td>3.3</td></tr>
+      <tr><td>7</td><td>Ruim voldoende</td><td class="deg">Solid, respectable 鈥?the most common strong grade</td><td>3.0</td></tr>
+      <tr><td>6.5</td><td>Voldoende</td><td class="deg">Satisfactory to good</td><td>2.7</td></tr>
+      <tr><td>6</td><td>Voldoende</td><td class="deg">Satisfactory 鈥?minimum pass</td><td>2.3</td></tr>
+      <tr><td>5.5</td><td>Bijna voldoende</td><td class="deg">Barely insufficient 鈥?compensation or resit usually required</td><td>2.0</td></tr>
+      <tr><td>&lt; 5.5</td><td>Onvoldoende</td><td class="deg">Fail 鈥?resit required</td><td>&lt; 2.0</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">'Typical' is doing real work here: evaluators vary by institution, subject mix and grading culture. Treat these as planning ranges, not guaranteed outputs.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <h2>Questions students actually ask</h2>
+  <dl class="faq">
+    <div>
+      <dt>How do I convert a Dutch grade to a US GPA?</dt>
+      <dd>The Dutch 1鈥?0 scale maps to US bands after accounting for grading culture: 8.5+ to 4.0, 8.0 to roughly 3.7, 7.0鈥?.5 to 3.0鈥?.3, and the 6.0 pass to about 2.3. A plain 脳0.4 shortcut understates Dutch grades badly, because 9s and 10s are almost never awarded.</dd>
+    </div>
+    <div>
+      <dt>Is a Dutch 7 a good grade?</dt>
+      <dd>Yes. A 7 is 'ruim voldoende' 鈥?a solid result, roughly a US B. Treating a 7 as 70% and mapping to a C is the classic error. Dutch grades cluster between 6 and 8 because 9s and 10s are rarely awarded by design.</dd>
+    </div>
+    <div>
+      <dt>What is the passing grade in the Netherlands?</dt>
+      <dd>6 on the 1鈥?0 scale, per Nuffic and Dutch university practice. Some programmes allow a 5.5 to be compensated or rounded under specific rules, and resits are standard for failing one course.</dd>
+    </div>
+    <div>
+      <dt>Does WES publish a Dutch grade conversion table?</dt>
+      <dd>No. WES evaluates course by course and publishes no official table. The band values here are reconstructions of common practice for planning 鈥?your actual WES result is institution-specific.</dd>
+    </div>
+    <div>
+      <dt>Why is the Dutch scale so different from the US one?</dt>
+      <dd>Dutch grading is stricter by design: a 10 is reserved for near-perfection and 9s are exceptional, so the realistic ceiling is an 8. The same performance that earns an A in the US usually lands at 7鈥? in the Netherlands. Number-to-number conversion without this context produces misleadingly low results.</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section>
+  <h2>Where these figures come from</h2>
+  <div class="sources">
+    <ul>
+      <li><span class="what">Dutch 1鈥?0 scale &amp; passing rules</span><span class="who"><a href="https://www.nuffic.nl/en/education-systems/the-netherlands/grading-systems" rel="nofollow noopener" target="_blank">Nuffic 鈥?Dutch grading systems</a> (6 minimum pass; 9s and 10s rarely awarded)</span></li>
+      <li><span class="what">Grading culture &amp; cum laude norms</span><span class="who">Dutch university practice (8.0+ average for cum laude at most institutions)</span></li>
+      <li><span class="what">US GPA band values</span><span class="who">Reconstruction of common credential-evaluation practice; WES does not publish an official table</span></li>
+      <li><span class="what">US 4.0 letter scale</span><span class="who">Typical US institution 4.0 letter scale</span></li>
+    </ul>
+    <p class="verified">Figures last verified August 2026 路 Band tables are reconstructions of common practice, not official WES output; WES results are course-by-course and institution-specific</p>
+  </div>
+</section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-col">
+    <strong>Grade converters</strong>
+    <a href="grade-conversion.html">Grade conversion hub</a>
+    <a href="percentage-to-gpa.html">Percentage 鈫?GPA</a>
+    <a href="gpa-to-percentage.html">GPA 鈫?percentage</a>
+    <a href="cgpa-to-gpa.html">CGPA 鈫?GPA</a>
+  </div>
+  <div class="foot-col">
+    <strong>Credit converters</strong>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="credit-conversion.html">Credit conversion hub</a>
+  </div>
+  <div class="foot-col">
+    <strong>Language scores</strong>
+    <a href="ielts-to-toefl.html">IELTS 鈫?TOEFL</a>
+  </div>
+  <div class="foot-col">
+    <strong>Country guides</strong>
+    <a href="country-guides.html">All country guides</a>
+    <a href="germany-to-gpa.html">Germany</a>
+    <a href="netherlands-to-gpa.html">Netherlands</a>
+    <a href="france-to-gpa.html">France</a>
+    <a href="india-to-gpa.html">India</a>
+    <a href="china-to-gpa.html">China</a>
+  </div>
+  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var grade = $('grade');
+  var gpa = $('gpa'), descr = $('descr'), mName = $('m-name'), points = $('points'), sum = $('sum');
+  var verdict = $('verdict'), vNote = $('verdict-note'), you = $('you'), youLab = $('you-lab'), gticks = $('gticks');
+
+  function descrOf(g){
+    if(g >= 9) return 'Uitmuntend';
+    if(g >= 8) return 'Goed';
+    if(g >= 7.5) return 'Ruim voldoende';
+    if(g >= 7) return 'Ruim voldoende';
+    if(g >= 6.5) return 'Voldoende';
+    if(g >= 6) return 'Voldoende';
+    if(g >= 5.5) return 'Bijna voldoende';
+    return 'Onvoldoende';
+  }
+
+  function methodValue(m){
+    var g = parseFloat(grade.value) || 6;
+    if(m === 'band'){
+      if(g >= 9) return 4.0;
+      if(g >= 8) return 3.7;
+      if(g >= 7.5) return 3.3;
+      if(g >= 7) return 3.0;
+      if(g >= 6.5) return 2.7;
+      if(g >= 6) return 2.3;
+      if(g >= 5.5) return 2.0;
+      return 1.3;
+    }
+    if(m === 'nuffic'){
+      if(g >= 9) return 4.0;
+      if(g >= 8) return 3.7;
+      if(g >= 7) return 3.0;
+      if(g >= 6) return 2.5;
+      if(g >= 5) return 2.0;
+      return 1.3;
+    }
+    return Math.min(4, Math.max(0, g * 0.4));
+  }
+
+  function round1(n){ return Math.round(n*10)/10; }
+
+  function currentMethod(){
+    var r = document.querySelector('input[name=method]:checked');
+    return r ? r.value : 'band';
+  }
+
+  function renderTicks(){
+    gticks.innerHTML = '';
+    [[2.0,'fail zone'],[2.3,'pass'],[3.0,'common floor'],[3.5,'top-50 ideal'],[4.0,'maximum']].forEach(function(t){
+      var d = document.createElement('div');
+      d.className = 'gtick';
+      d.style.left = (t[0]/4*100) + '%';
+      d.innerHTML = '<div class="gtick-lab" style="left:0"><b>' + t[0] + '</b>' + t[1] + '</div>';
+      gticks.appendChild(d);
+    });
+  }
+
+  function writeVerdict(g){
+    var v, n;
+    var gr = parseFloat(grade.value) || 6;
+    if(gr < 6){
+      v = 'A Dutch <em>' + gr.toFixed(1) + '</em> 鈥?below the 6.0 pass line.';
+      n = 'On the Dutch scale this is onvoldoende (insufficient). Most programmes allow a resit rather than carrying the grade, so it is not usually a permanent result on the transcript.';
+    } else if(gr < 6.5){
+      v = 'A Dutch <em>' + gr.toFixed(1) + '</em> 鈥?voldoende, the pass band, roughly a 2.3 US GPA.';
+      n = 'It clears the pass line but sits under the common 3.0 floor for most US master\u2019s programmes. If it\u2019s an early-semester result, the rest of the application has to carry the load.';
+    } else if(gr < 7.5){
+      v = 'A Dutch <em>' + gr.toFixed(1) + '</em> 鈥?solid work, roughly a 3.0鈥?.3 US GPA.';
+      n = 'This clears the common 3.0 floor and is respectable at most US master\u2019s programmes. Selective departments start closer to 3.5, which is roughly a Dutch 7.5鈥?.0.';
+    } else if(gr < 8){
+      v = 'A Dutch <em>' + gr.toFixed(1) + '</em> 鈥?a strong result, competitive for selective programmes.';
+      n = 'Roughly a 3.3鈥?.7 US GPA. On the Dutch scale this is at or near the practical ceiling for coursework, so it reads well against most US master\u2019s floors.';
+    } else if(gr < 9){
+      v = 'A Dutch <em>' + gr.toFixed(1) + '</em> 鈥?an excellent grade, cum laude territory.';
+      n = 'An 8+ average is the threshold many Dutch universities use for cum laude. In US terms this is roughly a 3.7 or better 鈥?competitive across the board.';
+    } else {
+      v = 'A Dutch <em>' + gr.toFixed(1) + '</em> 鈥?exceptional and very rare.';
+      n = '9s and 10s are almost never awarded on the Dutch scale, so this is a near-ceiling result. In US terms it maps to a 4.0 and is not the constraint on your application.';
+    }
+    verdict.innerHTML = v;
+    vNote.textContent = n;
+  }
+
+  function compute(){
+    var method = currentMethod();
+    var g = methodValue(method);
+    var gr = parseFloat(grade.value) || 6;
+
+    var names = { band:'Culture-based bands', nuffic:'Nuffic-framed', linear:'Linear 脳 0.4' };
+    var interps = { band:'grading culture included', nuffic:'scale mapped by meaning', linear:'rough guide only' };
+
+    g = round1(g);
+    gpa.innerHTML = g.toFixed(1) + '<span class="r-unit">/4.0</span>';
+    descr.innerHTML = descrOf(gr) + '<span class="r-unit">' + gr.toFixed(1) + ' on Dutch scale</span>';
+    mName.textContent = names[method];
+    points.textContent = g.toFixed(1);
+    sum.textContent = interps[method];
+
+    var pct2 = (g/4)*100;
+    you.style.left = Math.max(0, Math.min(100, pct2)) + '%';
+    you.style.visibility = g > 0 ? 'visible' : 'hidden';
+    youLab.textContent = 'you 路 ' + g.toFixed(1);
+
+    writeVerdict(g);
+  }
+
+  var radios = document.querySelectorAll('input[name=method]');
+  Array.prototype.forEach.call(radios, function(r){
+    r.addEventListener('change', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.conv .m'), function(m){ m.classList.remove('on'); });
+      r.closest('.m').classList.add('on');
+      compute();
+    });
+  });
+
+  grade.addEventListener('input', compute);
+
+  renderTicks();
+  compute();
+})();
+</script>
+<script defer src="assets/js/site.js"></script>
+</body>
+</html>

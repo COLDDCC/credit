@@ -1,0 +1,566 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Percentage to GPA Converter 鈥?Chinese &amp; Indian Percentages to US 4.0</title>
+<meta name="description" content="Convert your percentage grade to a US 4.0 GPA. See the simple 梅25 estimate, a WES-style band mapping for China and India, and common university algorithms side by side. Sources cited.">
+<!-- TODO 涓婄嚎鍓嶆浛鎹㈡湰鏂囦欢鍐呮墍鏈?example.com 涓虹湡瀹炲煙鍚嶏紙canonical / og:url / schema 鍐呯殑 URL 鍏?5 澶勶級 -->
+<link rel="canonical" href="https://example.com/percentage-to-gpa">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/percentage-to-gpa">
+<meta property="og:title" content="Percentage to GPA Converter 鈥?Chinese &amp; Indian Percentages to US 4.0">
+<meta property="og:description" content="Percentage to US GPA without a single magic formula: simple 梅25 estimate, WES-style bands, and university algorithms side by side.">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://example.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:title" content="Percentage to GPA Converter">
+<meta name="twitter:description" content="Three methods side by side 鈥?simple, WES-style, and university scales. Sources cited.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://example.com/percentage-to-gpa#tool",
+      "name": "Percentage to GPA Converter",
+      "url": "https://example.com/percentage-to-gpa",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any modern web browser",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Percentage to US 4.0 GPA",
+        "Simple linear, WES-style band and university-scale methods",
+        "China and India band mappings",
+        "Admissions readout against common US cutoffs"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Grade conversion", "item": "https://example.com/grade-conversion" },
+        { "@type": "ListItem", "position": 3, "name": "Percentage to GPA" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://example.com/percentage-to-gpa#page",
+      "url": "https://example.com/percentage-to-gpa",
+      "name": "Percentage to GPA Converter",
+      "dateModified": "2026-08-12",
+      "primaryImageOfPage": null,
+      "mainEntity": { "@id": "https://example.com/percentage-to-gpa#tool" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert my percentage to a 4.0 GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no single formula. The quick rule of thumb divides by 25 (85% 鈫?3.4), but that flattens the top of the scale. Credential evaluators such as WES convert course by course using band tables that vary by country and by institution. An 85 from a selective university is not the same as an 85 from one where 85 is average."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 梅25 accurate for Chinese students?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It is a rough estimate only. Chinese universities commonly use threshold tables 鈥?for example 90鈥?00 as 4.0 areas, 85鈥?9 as 3.7 鈥?that give a lower result than 梅25 for mid scores and a different shape at the top. Use your own university's published conversion when it exists, and expect WES to apply its own course-by-course evaluation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is 85% a good GPA for a US master's?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Roughly a 3.5 by the simple rule, and varied by WES-style bands. Most US master's programmes want a 3.0 or better; selective ones look for 3.5+. Context 鈥?university selectivity, subject distribution and the full evaluation 鈥?matters more than the raw number."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does WES publish its conversion table?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. WES converts each course using its own institutional methodology and provides the estimate through its iGPA calculator and paid evaluations. Published band tables, including the ones on this page, are reconstructions of common practice, not WES's official table."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I report a self-calculated GPA to a university?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Report exactly what your transcript says first. Most US programmes either take your transcript as-is or require a professional credential evaluation. If you do convert, state the method next to the number 鈥?for example '3.4 (85 梅 25)' 鈥?rather than presenting it as an official figure."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why do China and India convert differently from the US scale?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Grading cultures differ. A 90 in the US often means 'B', while a 90 in China or India is typically strong work. Evaluators adjust for this, which is why the same percentage converts to a higher GPA in some systems than a raw percentage-to-letter mapping would suggest."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* page-specific tweaks only; everything else lives in site.css */
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="site-nav">
+  <a class="brand" href="index.html">CreditLab<small>transcripts, translated</small></a>
+  <nav aria-label="Converters">
+    <a href="index.html">Home</a>
+    <a href="grade-conversion.html" aria-current="page">Grades</a>
+    <a href="credit-conversion.html">Credit conversion</a>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US</a>
+    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ielts-to-toefl.html">Languages</a>
+    <a href="country-guides.html">Countries</a>
+  </nav>
+</header>
+
+<div class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="grade-conversion.html">Grade conversion</a></li>
+    <li><span aria-current="page">Percentage to GPA</span></li>
+  </ol>
+</div>
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Grade conversion</span>
+    <span>路</span>
+    <span><b>No single magic formula 鈥?methods shown side by side</b></span>
+  </div>
+  <h1><span class="sys-eu">Percentage</span> to <span class="sys-us">US GPA</span></h1>
+  <p class="standfirst">Convert a percentage grade to the US 4.0 scale three ways 鈥?the quick rule of thumb, a WES-style band mapping, and your university's own scale 鈥?and see the difference between them. One number from only one method hides everything that matters.</p>
+</header>
+
+<!-- ============ CONVERTER ============ -->
+<div class="conv">
+  <div class="pane pane-in">
+    <div class="pane-tag">Your system</div>
+
+    <label for="pct">Percentage score (0鈥?00)</label>
+    <input type="number" id="pct" value="85" min="0" max="100" step="0.5" inputmode="decimal">
+
+    <div class="methods" role="radiogroup" aria-label="Conversion method">
+      <label class="m on" for="m1">
+        <input type="radio" name="method" id="m1" value="linear" checked>
+        <span>
+          <span class="m-name">Simple 梅 25</span>
+          <span class="m-note">The quick rule of thumb. It flattens the top of the scale 鈥?use it only as a rough guide.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m2">
+        <input type="radio" name="method" id="m2" value="wes">
+        <span>
+          <span class="m-name">WES-style bands</span>
+          <span class="m-note">A band mapping in the style of credential evaluators, adjusted by country.</span>
+        </span>
+      </label>
+
+      <div class="sub-fields" id="f-wes">
+        <label for="country">Country / grading context</label>
+        <select id="country">
+          <option value="china" selected>China</option>
+          <option value="india">India</option>
+          <option value="us">US-standard</option>
+        </select>
+        <p class="hint">WES evaluates courses case by case, so these bands are typical values, not the official table 鈥?WES does not publish one.</p>
+      </div>
+
+      <label class="m" for="m3">
+        <input type="radio" name="method" id="m3" value="preset">
+        <span>
+          <span class="m-name">University scale</span>
+          <span class="m-note">Use a published Chinese algorithm, or your registrar's own conversion.</span>
+        </span>
+      </label>
+
+      <div class="sub-fields" id="f-preset">
+        <label for="preset">Algorithm / scale</label>
+        <select id="preset">
+          <option value="pku">鍖椾含澶у 4.0 绠楁硶</option>
+          <option value="band8590">甯歌 90 / 85 / 80 鍒嗘。</option>
+        </select>
+        <p class="hint">Your university's published table always overrides presets. The 鍖楀ぇ algorithm is widely documented; the 90/85/80 bands reflect common practice across Chinese universities.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pane pane-out" aria-live="polite">
+    <div class="pane-tag">US equivalent</div>
+
+    <div class="readout">
+      <div class="r-label">US GPA (4.0)</div>
+      <div class="r-value" id="gpa">3.4<span class="r-unit">/4.0</span></div>
+    </div>
+
+    <div class="readout">
+      <div class="r-label">Letter grade</div>
+      <div class="r-value minor" id="letter">B+<span class="r-unit">US scale</span></div>
+    </div>
+
+    <div class="workload">
+      <div>Method &nbsp;<b id="m-name">Linear 梅25</b></div>
+      <div>GPA points &nbsp;<b id="points">3.4</b></div>
+      <div>Interpretation &nbsp;<b id="sum">rough guide only</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VERDICT ============ -->
+<div class="verdictbox">
+  <div class="verdictbox-tag">Where this sits for a US application</div>
+  <div aria-live="polite">
+    <p class="gverdict" id="verdict">3.4 clears the common 3.0 floor 鈥?<em>good standing</em> for most US master's programmes.</p>
+    <p class="gverdict-note" id="verdict-note">Most programmes want a 3.0 minimum; selective ones start around 3.5. The raw number is a starting point 鈥?university selectivity, subject distribution and the evaluator's course-by-course read all weigh in.</p>
+  </div>
+
+  <div class="gscale" id="gscale">
+    <div class="gtrack"></div>
+    <div id="gticks"></div>
+    <div class="you" id="you" style="left:0%">
+      <div class="you-dot"></div>
+      <div class="you-lab" id="you-lab">you 路 3.4</div>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <span class="rel-tag">In the same family</span>
+  <a href="gpa-to-percentage.html">GPA 鈫?percentage converter</a>
+  <a href="cgpa-to-gpa.html">CGPA 鈫?GPA converter</a>
+</div>
+
+<!-- ============ WHY NO SINGLE FORMULA ============ -->
+<section>
+  <h2>Why there isn't one formula</h2>
+  <p>A percentage is a single number. A US GPA is shorthand for the average of individual course grades, weighted by credit. Slope a straight line between them and you get 梅25 鈥?but that assumes a 100% is four points of anything, which isn't how grades work in any country.</p>
+
+  <div class="split">
+    <div>
+      <div class="sys-name">China / India</div>
+      <div class="unit">90 = strong</div>
+      <p>In China an 85 is typically solid work and 90 is excellent; in India an 85 in engineering is genuinely strong. Evaluators map these bands up rather than flattening them against a US curve.</p>
+    </div>
+    <div>
+      <div class="sys-name">US 4.0 letters</div>
+      <div class="unit">90 = B</div>
+      <p>On a typical US letter scale 90+ is an A and 80鈥?9 is a B (3.0). A Chinese 85 converting to a US B by raw letter would badly understate the same work in context.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:20px">That mismatch is the whole reason credential evaluators exist and why they work course by course. WES, ECE and their peers read the transcript, the institution, and the grading culture together 鈥?and their output varies by institution, which is why no single published band table is authoritative. The three methods above are an honest picture of the range you're working with, not a claim to a single truth.</p>
+
+  <p style="margin-top:16px">And if your transcript carries ECTS as well, grades aren't the only thing that needs translating 鈥?<a href="ects-to-us-credits.html">convert your European credits to US credits</a> in the same pass.</p>
+</section>
+
+<!-- ============ METHODS ============ -->
+<section>
+  <h2>Three ways to run the conversion</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="num">METHOD 01</div>
+      <h3>Simple 梅 25</h3>
+      <p>Divide by 25. Fastest and most common, but it flattens the top of the scale: 100% becomes 4.0 and 60% becomes 2.4, with nothing in between doing justice to either end.</p>
+      <div class="formula">GPA = percentage 梅 25</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 02</div>
+      <h3>WES-style bands</h3>
+      <p>A threshold mapping in the style of credential evaluators, adjusted by country. Band midpoints from this page are typical values, reconstructed from practice 鈥?WES does not publish one table.</p>
+      <div class="formula">China: 95鈥?00鈫?.0 路 85鈥?9鈫?.5<br>India: 85+鈫?.0 路 75鈥?4鈫?.3</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 03</div>
+      <h3>University scale</h3>
+      <p>Your registrar's conversion is the number to actually use. Common Chinese presets here; if your university publishes its own, theirs overrides everything.</p>
+      <div class="formula">鍖楀ぇ: 90鈥?00鈫?.0 路 85鈥?9鈫?.7</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <h3>Don't submit a self-calculated GPA as official</h3>
+    <p>Report what your transcript says first. Most US programmes take the transcript as-is or require a professional evaluation. If you convert anywhere, state the method alongside the number 鈥?the honest number beats a smooth one.</p>
+  </div>
+</section>
+
+<!-- ============ REFERENCE ============ -->
+<section>
+  <h2>Common band maps</h2>
+
+  <h3>China 鈥?typical percentage to 4.0</h3>
+  <table>
+    <thead>
+      <tr><th>Percentage</th><th>Typical 4.0</th><th>Letter</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>95 鈥?100</td><td>4.0</td><td>A</td><td class="deg">Top of cohort</td></tr>
+      <tr><td>90 鈥?94</td><td>3.7 鈥?3.9</td><td>A鈭?/td><td class="deg">Well above class mean</td></tr>
+      <tr><td>85 鈥?89</td><td>3.3 鈥?3.6</td><td>B+</td><td class="deg">Solid work, most common 'strong' band</td></tr>
+      <tr><td>80 鈥?84</td><td>3.0 鈥?3.3</td><td>B / B+</td><td class="deg">Meeting expectations</td></tr>
+      <tr><td>75 鈥?79</td><td>2.7 鈥?3.0</td><td>B鈭?/ B</td><td class="deg">Below 80, above the pass line</td></tr>
+      <tr><td>70 鈥?74</td><td>2.3 鈥?2.6</td><td>C+</td><td class="deg">Passing, weaker</td></tr>
+      <tr><td>60 鈥?69</td><td>1.0 鈥?2.2</td><td>C / D</td><td class="deg">Pass line at 60</td></tr>
+      <tr><td>&lt; 60</td><td>0.0</td><td>F</td><td class="deg">Fail</td></tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top:34px">India 鈥?typical percentage to 4.0</h3>
+  <table>
+    <thead>
+      <tr><th>Percentage</th><th>Typical 4.0</th><th>Letter</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>85+</td><td>4.0</td><td>A</td><td class="deg">Exceptional</td></tr>
+      <tr><td>75 鈥?84</td><td>3.3</td><td>B+</td><td class="deg">Strong, common top band</td></tr>
+      <tr><td>70 鈥?74</td><td>3.0</td><td>B</td><td class="deg">Good</td></tr>
+      <tr><td>60 鈥?69</td><td>2.3 鈥?2.7</td><td>C+ / C</td><td class="deg">Above average</td></tr>
+      <tr><td>50 鈥?59</td><td>1.7 鈥?2.0</td><td>D+ / D</td><td class="deg">Passing band</td></tr>
+      <tr><td>&lt; 50</td><td>0.0</td><td>F</td><td class="deg">Fail</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">'Typical' is doing real work here: evaluators vary by institution, subject mix and grading culture. Treat these as planning ranges, not guaranteed outputs.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <h2>Questions students actually ask</h2>
+  <dl class="faq">
+    <div>
+      <dt>How do I convert my percentage to a 4.0 GPA?</dt>
+      <dd>There is no single formula. The quick rule of thumb divides by 25 (85% 鈫?3.4), but that flattens the top of the scale. Credential evaluators such as WES convert course by course using band tables that vary by country and institution.</dd>
+    </div>
+    <div>
+      <dt>Is 梅25 accurate for Chinese students?</dt>
+      <dd>It is a rough estimate only. Chinese universities commonly use threshold tables 鈥?for example 90鈥?00 mapping to the 4.0 area and 85鈥?9 to the 3.7鈥?.6 area 鈥?that behave differently from 梅25. Use your university's published conversion when it exists, and expect WES to do its own thing.</dd>
+    </div>
+    <div>
+      <dt>Is 85% a good GPA for a US master's?</dt>
+      <dd>Roughly a 3.5 by the simple rule, and varies by band mapping. Most US master's programmes want a 3.0 or better; selective ones look for 3.5+. Context matters more than the raw number.</dd>
+    </div>
+    <div>
+      <dt>Does WES publish its conversion table?</dt>
+      <dd>No. WES converts each course using its own institutional methodology, exposed through the iGPA calculator and paid evaluations. Published band tables, including this page's, are reconstructions of common practice.</dd>
+    </div>
+    <div>
+      <dt>Should I report a self-calculated GPA to a university?</dt>
+      <dd>Report exactly what your transcript says first. Most US programmes either take it as-is or require a professional evaluation. If you convert, state the method next to the number rather than presenting it as official.</dd>
+    </div>
+    <div>
+      <dt>Why do China and India convert differently from the US scale?</dt>
+      <dd>Grading cultures differ: a 90 in the US often means 'B', while a 90 in China or India is typically strong work. Evaluators adjust for this, which is why the same percentage maps higher in some systems than a raw percentage-to-letter mapping would suggest.</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section>
+  <h2>Where these figures come from</h2>
+  <div class="sources">
+    <ul>
+      <li><span class="what">Course-by-course evaluation method</span><span class="who"><a href="https://apps.wes.org/igpa-calculator/" rel="nofollow noopener" target="_blank">WES iGPA Calculator 鈥?World Education Services</a></span></li>
+      <li><span class="what">Chinese grading formats &amp; band practice</span><span class="who">Published university 4.0 conversion tables and registrar practice; the 鍖椾含澶у 4.0 绠楁硶 is a widely documented public algorithm</span></li>
+      <li><span class="what">India percentage band practice</span><span class="who">Common credential-evaluation practice for Indian marksheets</span></li>
+      <li><span class="what">US letter / percentage scale</span><span class="who">Typical US institution 4.0 letter scale (90+ A 路 80鈥?9 B 路 70鈥?9 C 路 60鈥?9 D)</span></li>
+    </ul>
+    <p class="verified">Figures last verified August 2026 路 Band tables are reconstructions of common practice, not official WES output; WES result is course-by-course and institution-specific</p>
+  </div>
+</section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-col">
+    <strong>Grade converters</strong>
+    <a href="grade-conversion.html">Grade conversion hub</a>
+    <a href="percentage-to-gpa.html">Percentage 鈫?GPA</a>
+    <a href="gpa-to-percentage.html">GPA 鈫?percentage</a>
+    <a href="cgpa-to-gpa.html">CGPA 鈫?GPA</a>
+  </div>
+  <div class="foot-col">
+    <strong>Credit converters</strong>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="credit-conversion.html">Credit conversion hub</a>
+  </div>
+  <div class="foot-col">
+    <strong>Language scores</strong>
+    <a href="ielts-to-toefl.html">IELTS 鈫?TOEFL</a>
+  </div>
+  <div class="foot-col">
+    <strong>Country guides</strong>
+    <a href="country-guides.html">All country guides</a>
+    <a href="germany-to-gpa.html">Germany</a>
+    <a href="netherlands-to-gpa.html">Netherlands</a>
+    <a href="france-to-gpa.html">France</a>
+    <a href="india-to-gpa.html">India</a>
+    <a href="china-to-gpa.html">China</a>
+  </div>
+  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var pct = $('pct'), country = $('country'), preset = $('preset');
+  var gpa = $('gpa'), letter = $('letter'), mName = $('m-name'), points = $('points'), sum = $('sum');
+  var verdict = $('verdict'), vNote = $('verdict-note'), you = $('you'), youLab = $('you-lab'), gticks = $('gticks');
+
+  var BANDS = {
+    china: [[95,4.0],[90,3.8],[85,3.5],[80,3.1],[75,2.8],[70,2.5],[65,2.1],[60,1.5],[0,0]],
+    india: [[85,4.0],[75,3.3],[70,3.0],[60,2.5],[50,1.85],[0,0]],
+    us:    [[90,4.0],[80,3.0],[70,2.0],[60,1.0],[0,0]]
+  };
+  var PRESETS = {
+    pku:      [[90,4.0],[85,3.7],[82,3.3],[78,3.0],[75,2.7],[72,2.3],[68,2.0],[64,1.5],[60,1.0],[0,0]],
+    band8590: [[90,4.0],[85,3.7],[80,3.3],[75,3.0],[70,2.7],[65,2.3],[60,2.0],[0,0]]
+  };
+
+  function bandLookup(table, x){
+    for(var i=0;i<table.length;i++){
+      if(x >= table[i][0]){ return table[i][1]; }
+    }
+    return 0;
+  }
+
+  function round1(n){ return Math.round(n*10)/10; }
+
+  function letterOf(g){
+    if(g >= 3.7) return 'A';
+    if(g >= 3.3) return 'B+';
+    if(g >= 3.0) return 'B';
+    if(g >= 2.7) return 'B鈭?;
+    if(g >= 2.3) return 'C+';
+    if(g >= 2.0) return 'C';
+    if(g >= 1.7) return 'C鈭?;
+    if(g >= 1.0) return 'D';
+    return 'F';
+  }
+
+  function currentMethod(){
+    var r = document.querySelector('input[name=method]:checked');
+    return r ? r.value : 'linear';
+  }
+
+  function renderTicks(){
+    gticks.innerHTML = '';
+    [[2.0,'pass'],[3.0,'common floor'],[3.5,'top-50 ideal'],[4.0,'maximum']].forEach(function(t){
+      var d = document.createElement('div');
+      d.className = 'gtick';
+      d.style.left = (t[0]/4*100) + '%';
+      d.innerHTML = '<div class="gtick-lab" style="left:0"><b>' + t[0] + '</b>' + t[1] + '</div>';
+      gticks.appendChild(d);
+    });
+  }
+
+  function writeVerdict(g){
+    var v, n;
+    if(!(g > 0)){
+      v = 'Enter a percentage to see where it lands.';
+      n = 'The scale runs 0鈥?.0, marked with the cutoffs most US graduate programmes actually use.';
+    } else if(g < 2.0){
+      v = 'Below <em>2.0</em> 鈥?under the floor for most US graduate programmes.';
+      n = 'Every programme is different; at this level the rest of the application 鈥?admissions tests, letters, research 鈥?has to carry the load. Some programmes do look past the number.';
+    } else if(g < 3.0){
+      v = '<em>' + g.toFixed(1) + '</em> 鈥?passes a few programme floors, but most competitive admissions want more.';
+      n = 'The common 3.0 minimum is still ahead of you. Programmes that emphasise the whole file rather than a cutoff, and professional degrees with broader entry, are where a total like this competes.';
+    } else if(g < 3.5){
+      v = '<em>' + g.toFixed(1) + '</em> 鈥?clears the common 3.0 floor, good standing for most US master\u2019s programmes.';
+      n = 'Selective programmes and many top-50 departments start closer to 3.5. Where ' + g.toFixed(1) + ' sits in the final few decimals depends on the evaluator\u2019s course-by-course read, so treat it as a band, not a verdict.';
+    } else if(g < 3.7){
+      v = '<em>' + g.toFixed(1) + '</em> 鈥?competitive for selective programmes and most top-50 master\u2019s.';
+      n = 'You clear the informal 3.5 line used by many competitive departments. Whether the exact figure reads higher or lower depends on institution context and the course-by-course evaluation.';
+    } else if(g < 4.0){
+      v = '<em>' + g.toFixed(1) + '</em> 鈥?strong, at the level most competitive programmes want.';
+      n = 'This is firmly competitive across the board. Play the whole file, but the number is not the constraint.';
+    } else {
+      v = '<em>4.0</em> 鈥?the top of the scale.';
+      n = 'An exceptional record. The gap between a 4.0 and a 3.9 matters less than the shape of the transcript behind it.';
+    }
+    verdict.innerHTML = v;
+    vNote.textContent = n;
+  }
+
+  function compute(){
+    var method = currentMethod();
+    var p = parseFloat(pct.value) || 0;
+    var g;
+    var name;
+
+    if(method === 'linear'){
+      g = Math.min(4, p/25);
+      name = 'Linear 梅25';
+    } else if(method === 'wes'){
+      g = bandLookup(BANDS[country.value], p);
+      name = 'WES-style bands 路 ' + ({china:'China',india:'India',us:'US-standard'})[country.value];
+    } else {
+      g = bandLookup(PRESETS[preset.value], p);
+      name = (preset.value === 'pku') ? '鍖椾含澶у 4.0 绠楁硶' : '甯歌 90/85/80 鍒嗘。';
+    }
+
+    g = round1(g);
+
+    gpa.innerHTML = g.toFixed(1) + '<span class="r-unit">/4.0</span>';
+    letter.innerHTML = letterOf(g) + '<span class="r-unit">US scale</span>';
+    mName.textContent = name;
+    points.textContent = g.toFixed(1);
+    sum.textContent = (method === 'linear') ? 'rough guide only' : (method === 'wes') ? 'typical band value' : 'university algorithm';
+
+    var pct2 = (g/4)*100;
+    you.style.left = Math.max(0, Math.min(100, pct2)) + '%';
+    you.style.visibility = g > 0 ? 'visible' : 'hidden';
+    youLab.textContent = 'you 路 ' + g.toFixed(1);
+
+    writeVerdict(g);
+  }
+
+  var radios = document.querySelectorAll('input[name=method]');
+  Array.prototype.forEach.call(radios, function(r){
+    r.addEventListener('change', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.conv .m'), function(m){ m.classList.remove('on'); });
+      r.closest('.m').classList.add('on');
+      $('f-wes').classList.toggle('show', r.value === 'wes');
+      $('f-preset').classList.toggle('show', r.value === 'preset');
+      compute();
+    });
+  });
+
+  [pct, country, preset].forEach(function(el){
+    el.addEventListener(el === pct ? 'input' : 'change', compute);
+  });
+
+  renderTicks();
+  compute();
+})();
+</script>
+<script defer src="assets/js/site.js"></script>
+</body>
+</html>

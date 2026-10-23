@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indian CGPA to US GPA 鈥?India 10-Point CGPA</title>
+<meta name="description" content="Convert an Indian CGPA (out of 10) to a US 4.0 GPA. The UGC 脳9.5 percentage shortcut, the linear proportional map, and WES-style bands 鈥?side by side, because Indian CGPAs usually sit higher than a naive assumes.">
+<!-- TODO 涓婄嚎鍓嶆浛鎹㈡湰鏂囦欢鍐呮墍鏈?example.com 涓虹湡瀹炲煙鍚嶏紙canonical / og:url / schema 鍐呯殑 URL 鍏?5 澶勶級 -->
+<link rel="canonical" href="https://example.com/india-to-gpa">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/india-to-gpa">
+<meta property="og:title" content="Indian CGPA to US GPA 鈥?India 10-Point CGPA">
+<meta property="og:description" content="The Indian 10-point CGPA to US 4.0 GPA: UGC 脳9.5, linear mapping, and WES-style bands.">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://example.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:title" content="Indian CGPA to US GPA Converter">
+<meta name="twitter:description" content="India 10-point CGPA 鈫?US 4.0, three ways with the caveats included.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://example.com/india-to-gpa#tool",
+      "name": "Indian CGPA to US GPA Converter",
+      "url": "https://example.com/india-to-gpa",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any modern web browser",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "Indian 10-point CGPA to US 4.0 GPA",
+        "UGC 脳9.5 percentage shortcut",
+        "Linear and WES-style band mapping",
+        "Admissions readout against common US cutoffs"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Country guides", "item": "https://example.com/country-guides" },
+        { "@type": "ListItem", "position": 3, "name": "India" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://example.com/india-to-gpa#page",
+      "url": "https://example.com/india-to-gpa",
+      "name": "Indian CGPA to US GPA Converter",
+      "dateModified": "2026-08-12",
+      "primaryImageOfPage": null,
+      "mainEntity": { "@id": "https://example.com/india-to-gpa#tool" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert an Indian CGPA to a US GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Run it through your institution's own conversion if one exists, then use one of three estimates: the UGC 脳9.5 percentage shortcut (CGPA 脳9.5 = %, then 梅25 for a rough 4.0), a linear proportional map, or a WES-style band. Because Indian grading is often more generous at the top, a high CGPA does not always mean a 4.0 in US terms."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What CGPA is good in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "On the Indian 10-point scale, 8.5+ is excellent (roughly a 3.7鈥?.0 US GPA), 7.5鈥?.4 is strong (roughly 3.3鈥?.7), and 6.5鈥?.4 is good (roughly 2.7鈥?.3). Uses vary by institution and programme, and your university's official table always wins over a generic estimate."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do I convert CGPA to percentage in India?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "University Grants Commission guidance uses CGPA 脳 9.5 to get an approximate percentage. Some Indian institutions effectively use 脳10 on a 10-point scale. Always use your own university's published conversion if it exists 鈥?the two can differ noticeably."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does WES publish an Indian CGPA conversion table?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. WES evaluates each course using its own methodology and publishes no official table. The band values on this page are reconstructions of common practice for planning 鈥?your actual WES result is course-by-course and institution-specific."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does my Indian CGPA not equal a 4.0 directly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Indian 10-point scales are internally consistent but not identical across universities, and some award the top bands generously. A 9.0 at a strict university can mean more than a 9.5 at a generous one. Evaluators consider the institution's banding, so the same CGPA can produce different US GPAs."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* page-specific tweaks only; everything else lives in site.css */
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="site-nav">
+  <a class="brand" href="index.html">CreditLab<small>transcripts, translated</small></a>
+  <nav aria-label="Converters">
+    <a href="index.html">Home</a>
+    <a href="grade-conversion.html">Grades</a>
+    <a href="credit-conversion.html">Credit conversion</a>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US</a>
+    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ielts-to-toefl.html">Languages</a>
+    <a href="country-guides.html" aria-current="page">Countries</a>
+  </nav>
+</header>
+
+<div class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="country-guides.html">Country guides</a></li>
+    <li><span aria-current="page">India</span></li>
+  </ol>
+</div>
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Country guide 路 India</span>
+    <span>路</span>
+    <span><b>Convert with your institution first</b></span>
+  </div>
+  <h1><span class="sys-eu">Indian CGPA</span> to <span class="sys-us">US GPA</span></h1>
+  <p class="standfirst">India grades on a 10-point CGPA, but the banding differs by university 鈥?which is why your own institution's official conversion wins over any generic estimate. This converter gives you three reads: the UGC 脳9.5 percentage shortcut, a linear proportional map, and a WES-style band, with the caveat that a high Indian CGPA doesn't automatically mean a 4.0.</p>
+</header>
+
+<!-- ============ CONVERTER ============ -->
+<div class="conv">
+  <div class="pane pane-in">
+    <div class="pane-tag">Your system</div>
+
+    <label for="grade">Indian CGPA (out of 10)</label>
+    <input type="number" id="grade" value="8.0" min="0" max="10" step="0.1" inputmode="decimal">
+
+    <div class="methods" role="radiogroup" aria-label="Conversion method">
+      <label class="m on" for="m1">
+        <input type="radio" name="method" id="m1" value="ugc" checked>
+        <span>
+          <span class="m-name">UGC 脳9.5 percentage</span>
+          <span class="m-note">The University Grants Commission shortcut 鈥?CGPA 脳9.5 鈫?%, then the standard % 鈫?GPA bands.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m2">
+        <input type="radio" name="method" id="m2" value="band">
+        <span>
+          <span class="m-name">WES-style bands</span>
+          <span class="m-note">Common credential-evaluation band mapping, tuned to how Indian CGPAs typically sit.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m3">
+        <input type="radio" name="method" id="m3" value="linear">
+        <span>
+          <span class="m-name">Linear (CGPA 脳 0.4)</span>
+          <span class="m-note">Straight proportion. Simple, consistent, but often harsh on mid-range CGPAs.</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="pane pane-out" aria-live="polite">
+    <div class="pane-tag">US equivalent</div>
+
+    <div class="readout">
+      <div class="r-label">US GPA (4.0)</div>
+      <div class="r-value" id="gpa">3.3<span class="r-unit">/4.0</span></div>
+    </div>
+
+    <div class="readout">
+      <div class="r-label">Equivalent percentage</div>
+      <div class="r-value minor" id="descr">76%<span class="r-unit">8.0 脳 9.5</span></div>
+    </div>
+
+    <div class="workload">
+      <div>Method &nbsp;<b id="m-name">UGC 脳9.5 percentage</b></div>
+      <div>GPA points &nbsp;<b id="points">3.3</b></div>
+      <div>Interpretation &nbsp;<b id="sum">via 76% on US bands</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VERDICT ============ -->
+<div class="verdictbox">
+  <div class="verdictbox-tag">Where this sits for a US application</div>
+  <div aria-live="polite">
+    <p class="gverdict" id="verdict">An Indian CGPA of <em>8.0</em> is roughly a <em>3.3</em> US GPA.</p>
+    <p class="gverdict-note" id="verdict-note">That clears the common 3.0 floor and is competitive at many US master's programmes. Selective programmes start closer to 3.5, roughly a CGPA of 8.5+. If your university publishes an official CGPA鈫? table, use it 鈥?this is an estimate, not a replacement.</p>
+  </div>
+
+  <div class="gscale" id="gscale">
+    <div class="gtrack"></div>
+    <div id="gticks"></div>
+    <div class="you" id="you" style="left:0%">
+      <div class="you-dot"></div>
+      <div class="you-lab" id="you-lab">you 路 3.3</div>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <span class="rel-tag">In the same family</span>
+  <a href="country-guides.html">All country guides</a>
+  <a href="cgpa-to-gpa.html">CGPA 鈫?GPA converter</a>
+  <a href="percentage-to-gpa.html">Percentage 鈫?GPA converter</a>
+</div>
+
+<!-- ============ WHY CULTURE ============ -->
+<section>
+  <h2>Why a 10-point CGPA doesn't map to a simple 4.0</h2>
+  <p>The Indian 10-point scale looks proportional to the US 4.0 鈥?divide by 10, times 4 鈥?and the arithmetic is tempting. But the two scales behave differently at the top. Indian universities set their own banding, some award the top bands generously, and a 9.0 at a strict institution can mean more than a 9.5 at a generous one. Evaluators read the transcript, the institution, and the banding tables together.</p>
+
+  <div class="split">
+    <div>
+      <div class="sys-name">India</div>
+      <div class="unit">8.5+ = excellent</div>
+      <p>First Division typically starts around 60% (鈮?6.3 脳9.5), and 8.5鈥?0 is strong-to-outstanding territory depending on the university. Banding is institution-specific.</p>
+    </div>
+    <div>
+      <div class="sys-name">US 4.0</div>
+      <div class="unit">3.7+ = A range</div>
+      <p>US A/A鈭?territory starts at 90% on many scales. Because Indian top bands are sometimes awarded generously, a high CGPA does not automatically translate to a 4.0.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:20px">The three methods below land differently on purpose: the UGC shortcut is the referenceable one in India, WES-style bands are the honest planning read, and the linear map is what naive calculators do 鈥?which is why the results can disagree. That disagreement is information, not a bug.</p>
+
+  <p style="margin-top:16px">And if you're working from a percentage instead of a CGPA, use the <a href="percentage-to-gpa.html">percentage 鈫?GPA converter</a> directly.</p>
+</section>
+
+<!-- ============ METHODS ============ -->
+<section>
+  <h2>Three ways to run the conversion</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="num">METHOD 01</div>
+      <h3>UGC 脳9.5 percentage</h3>
+      <p>University Grants Commission guidance: CGPA 脳 9.5 = percentage. Then map the percentage to US bands using the standard 90/80/70 anchors. Referenceable in India, and the most common shortcut applicants are told.</p>
+      <div class="formula">8.5 鈫?81% 鈫?3.7<br>8.0 鈫?76% 鈫?3.3</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 02</div>
+      <h3>WES-style bands</h3>
+      <p>A common credential-evaluation band read, tuned to how Indian CGPAs typically sit. More forgiving in the middle than a linear map, because a 6.5鈥?.5 CGPA is genuinely solid Indian work.</p>
+      <div class="formula">9.0+ 鈫?3.7鈥?.0 路 8.0鈥?.9 鈫?3.3鈥?.7<br>7.0鈥?.9 鈫?3.0鈥?.3 路 6.0鈥?.9 鈫?2.7鈥?.0</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 03</div>
+      <h3>Linear (CGPA 脳 0.4)</h3>
+      <p>CGPA 脳 0.4. Simple and widely used, but it treats both scales as proportionally identical 鈥?which they are not. It is harsh on mid-range CGPAs and optimistic nowhere it shouldn't be.</p>
+      <div class="formula">8.0 鈫?3.2 路 7.0 鈫?2.8</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <h3>Check your university's official table first</h3>
+    <p>Many Indian universities publish their own CGPA鈫抪ercentage conversion. That table always wins over the generic shortcuts here 鈥?the 脳9.5 factor is guidance, not law, and some institutions effectively use 脳10. If your transcript already states a percentage or GPA, report that.</p>
+  </div>
+</section>
+
+<!-- ============ REFERENCE ============ -->
+<section>
+  <h2>Indian CGPA at a glance</h2>
+  <table>
+    <thead>
+      <tr><th>CGPA (10)</th><th>鈮?%</th><th>Reading</th><th>Typical US GPA</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>9.0 鈥?10</td><td>85%+</td><td class="deg">Outstanding 鈥?top band at most institutions</td><td>3.7鈥?.0</td></tr>
+      <tr><td>8.5 鈥?8.9</td><td>80%+</td><td class="deg">Excellent 鈥?strong, competitive</td><td>3.7</td></tr>
+      <tr><td>8.0 鈥?8.4</td><td>76%+</td><td class="deg">Very good 鈥?clears most selective floors</td><td>3.3</td></tr>
+      <tr><td>7.0 鈥?7.9</td><td>66%+</td><td class="deg">Good 鈥?solid, above First Division</td><td>3.0鈥?.3</td></tr>
+      <tr><td>6.0 鈥?6.9</td><td>57%+</td><td class="deg">First Division boundary</td><td>2.7鈥?.0</td></tr>
+      <tr><td>&lt; 6.0</td><td>&lt; 57%</td><td class="deg">Below First Division 鈥?check institution policy</td><td>&lt; 2.7</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">Percentage equivalents use the UGC 脳9.5 factor as guidance; your institution's own table overrides these. 'Typical' is doing real work here 鈥?evaluators vary by institution and programme.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <h2>Questions students actually ask</h2>
+  <dl class="faq">
+    <div>
+      <dt>How do I convert an Indian CGPA to a US GPA?</dt>
+      <dd>Use your institution's official conversion first, then one of three estimates: UGC 脳9.5 鈫?percentage (then 梅25 for a rough 4.0), a linear 脳0.4 map, or a WES-style band. Because Indian top bands are sometimes awarded generously, a high CGPA does not automatically mean a 4.0 in US terms.</dd>
+    </div>
+    <div>
+      <dt>What CGPA is good in India?</dt>
+      <dd>8.5+ is excellent (roughly a 3.7鈥?.0 US GPA), 7.5鈥?.4 is strong (roughly 3.3鈥?.7), and 6.5鈥?.4 is good (roughly 2.7鈥?.3). Uses vary by institution 鈥?your university's table always wins.</dd>
+    </div>
+    <div>
+      <dt>How do I convert CGPA to percentage in India?</dt>
+      <dd>UGC guidance uses CGPA 脳 9.5 to approximate a percentage. Some institutions effectively use 脳10. Always use your own university's published conversion if it exists 鈥?the two can differ noticeably.</dd>
+    </div>
+    <div>
+      <dt>Does WES publish an Indian CGPA conversion table?</dt>
+      <dd>No. WES evaluates course by course and publishes no official table. The band values here are reconstructions of common practice for planning 鈥?your actual WES result is institution-specific.</dd>
+    </div>
+    <div>
+      <dt>Why does my high CGPA not map to a 4.0?</dt>
+      <dd>Indian 10-point scales are not identical across universities, and some award the top bands generously. Evaluators consider the institution's banding, so a 9.0 at a strict university can mean more than a 9.5 at a generous one.</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section>
+  <h2>Where these figures come from</h2>
+  <div class="sources">
+    <ul>
+      <li><span class="what">CGPA 鈫?percentage guidance</span><span class="who">University Grants Commission (UGC) 鈥?脳9.5 factor for 10-point CGPA</span></li>
+      <li><span class="what">First Division boundary</span><span class="who">Indian higher-education convention (鈮?60% / 鈮?6.3 脳9.5)</span></li>
+      <li><span class="what">US GPA band values</span><span class="who">Reconstruction of common credential-evaluation practice; WES does not publish an official table</span></li>
+      <li><span class="what">US % 鈫?letter anchors</span><span class="who">Typical US institution 90/80/70 letter-scale anchors</span></li>
+    </ul>
+    <p class="verified">Figures last verified August 2026 路 Band tables are reconstructions of common practice, not official WES output; always prefer your institution's published table</p>
+  </div>
+</section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-col">
+    <strong>Grade converters</strong>
+    <a href="grade-conversion.html">Grade conversion hub</a>
+    <a href="percentage-to-gpa.html">Percentage 鈫?GPA</a>
+    <a href="gpa-to-percentage.html">GPA 鈫?percentage</a>
+    <a href="cgpa-to-gpa.html">CGPA 鈫?GPA</a>
+  </div>
+  <div class="foot-col">
+    <strong>Credit converters</strong>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="credit-conversion.html">Credit conversion hub</a>
+  </div>
+  <div class="foot-col">
+    <strong>Language scores</strong>
+    <a href="ielts-to-toefl.html">IELTS 鈫?TOEFL</a>
+  </div>
+  <div class="foot-col">
+    <strong>Country guides</strong>
+    <a href="country-guides.html">All country guides</a>
+    <a href="germany-to-gpa.html">Germany</a>
+    <a href="netherlands-to-gpa.html">Netherlands</a>
+    <a href="france-to-gpa.html">France</a>
+    <a href="india-to-gpa.html">India</a>
+    <a href="china-to-gpa.html">China</a>
+  </div>
+  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var grade = $('grade');
+  var gpa = $('gpa'), descr = $('descr'), mName = $('m-name'), points = $('points'), sum = $('sum');
+  var verdict = $('verdict'), vNote = $('verdict-note'), you = $('you'), youLab = $('you-lab'), gticks = $('gticks');
+
+  function ugcMethod(g){
+    var pct = g * 9.5;
+    if(pct >= 85) return 4.0;
+    if(pct >= 80) return 3.7;
+    if(pct >= 75) return 3.3;
+    if(pct >= 70) return 3.0;
+    if(pct >= 60) return 2.7;
+    if(pct >= 50) return 2.3;
+    return 1.3;
+  }
+
+  function bandMethod(g){
+    if(g >= 9.0) return 3.7;
+    if(g >= 8.0) return 3.3;
+    if(g >= 7.5) return 3.3;
+    if(g >= 7.0) return 3.0;
+    if(g >= 6.0) return 2.7;
+    return 1.3;
+  }
+
+  function methodValue(m){
+    var g = parseFloat(grade.value) || 0;
+    if(m === 'ugc') return ugcMethod(g);
+    if(m === 'band') return bandMethod(g);
+    return Math.min(4, Math.max(0, g * 0.4));
+  }
+
+  function round1(n){ return Math.round(n*10)/10; }
+
+  function currentMethod(){
+    var r = document.querySelector('input[name=method]:checked');
+    return r ? r.value : 'ugc';
+  }
+
+  function renderTicks(){
+    gticks.innerHTML = '';
+    [[2.0,'fail zone'],[2.7,'first division'],[3.0,'common floor'],[3.5,'top-50 ideal'],[4.0,'maximum']].forEach(function(t){
+      var d = document.createElement('div');
+      d.className = 'gtick';
+      d.style.left = (t[0]/4*100) + '%';
+      d.innerHTML = '<div class="gtick-lab" style="left:0"><b>' + t[0] + '</b>' + t[1] + '</div>';
+      gticks.appendChild(d);
+    });
+  }
+
+  function writeVerdict(g){
+    var cg = parseFloat(grade.value) || 0;
+    var v, n;
+    if(cg < 5.5){
+      v = 'A CGPA of <em>' + cg.toFixed(1) + '</em> 鈥?below the typical First Division line.';
+      n = 'Below roughly 60% equivalent, most US master\u2019s programmes will want significant explanation: strong final-semester records, entrance exams, or professional experience.';
+    } else if(cg < 6.5){
+      v = 'A CGPA of <em>' + cg.toFixed(1) + '</em> 鈥?near the First Division boundary, roughly a 2.7 US GPA.';
+      n = 'This sits just under most US 3.0 floors. Strong coursework elsewhere, entrance exams, and a coherent story can carry it, but it\u2019s the binding constraint in most applications.';
+    } else if(cg < 7.5){
+      v = 'A CGPA of <em>' + cg.toFixed(1) + '</em> 鈥?good, roughly a 3.0鈥?.3 US GPA.';
+      n = 'That clears the common 3.0 floor for many US master\u2019s programmes. Selective departments want 3.5+, roughly a CGPA of 8.5+, so target schools accordingly.';
+    } else if(cg < 8.5){
+      v = 'A CGPA of <em>' + cg.toFixed(1) + '</em> 鈥?strong, competitive for selective programmes.';
+      n = 'Roughly a 3.3鈥?.7 US GPA. This clears most selective floors and leaves room for entrance exams to make the difference at the very top programmes.';
+    } else {
+      v = 'A CGPA of <em>' + cg.toFixed(1) + '</em> 鈥?excellent, competitive across the board.';
+      n = 'Roughly a 3.7+ US GPA by most reconstructions. At this level the constraint is rarely your GPA 鈥?it\u2019s research fit, statements, and recommendations.';
+    }
+    verdict.innerHTML = v;
+    vNote.textContent = n;
+  }
+
+  function compute(){
+    var method = currentMethod();
+    var g = round1(methodValue(method));
+    var cg = parseFloat(grade.value) || 0;
+
+    var names = { ugc:'UGC 脳9.5 percentage', band:'WES-style bands', linear:'Linear (CGPA 脳 0.4)' };
+    var interps = { ugc:'via ' + round1(cg * 9.5) + '% on US bands', band:'band mapping', linear:'rough guide only' };
+
+    g = round1(g);
+    gpa.innerHTML = g.toFixed(1) + '<span class="r-unit">/4.0</span>';
+    descr.innerHTML = round1(cg * 9.5) + '%<span class="r-unit">' + cg.toFixed(1) + ' 脳 9.5 (UGC)</span>';
+    mName.textContent = names[method];
+    points.textContent = g.toFixed(1);
+    sum.textContent = interps[method];
+
+    var pct2 = (g/4)*100;
+    you.style.left = Math.max(0, Math.min(100, pct2)) + '%';
+    you.style.visibility = g > 0 ? 'visible' : 'hidden';
+    youLab.textContent = 'you 路 ' + g.toFixed(1);
+
+    writeVerdict(g);
+  }
+
+  var radios = document.querySelectorAll('input[name=method]');
+  Array.prototype.forEach.call(radios, function(r){
+    r.addEventListener('change', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.conv .m'), function(m){ m.classList.remove('on'); });
+      r.closest('.m').classList.add('on');
+      compute();
+    });
+  });
+
+  grade.addEventListener('input', compute);
+
+  renderTicks();
+  compute();
+})();
+</script>
+<script defer src="assets/js/site.js"></script>
+</body>
+</html>

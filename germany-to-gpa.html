@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>German Grade to US GPA 鈥?Bavarian Formula &amp; Band Conversion</title>
+<meta name="description" content="Convert a German grade (1.0鈥?.0) to a US 4.0 GPA. The modified Bavarian formula (KMK / uni-assist standard), a WES-style band mapping, and the common 1.0鈥?.0 scale 鈥?side by side, with the inverted-scale caveat included. Sources cited.">
+<!-- TODO 涓婄嚎鍓嶆浛鎹㈡湰鏂囦欢鍐呮墍鏈?example.com 涓虹湡瀹炲煙鍚嶏紙canonical / og:url / schema 鍐呯殑 URL 鍏?5 澶勶級 -->
+<link rel="canonical" href="https://example.com/germany-to-gpa">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/germany-to-gpa">
+<meta property="og:title" content="German Grade to US GPA 鈥?Bavarian Formula &amp; Band Conversion">
+<meta property="og:description" content="German 1.0鈥?.0 to US 4.0, three ways: modified Bavarian formula, WES-style bands, and the raw scale. Sources cited.">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://example.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:title" content="German Grade to US GPA Converter">
+<meta name="twitter:description" content="The modified Bavarian formula, WES-style bands, and the inverted-scale caveat.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://example.com/germany-to-gpa#tool",
+      "name": "German Grade to US GPA Converter",
+      "url": "https://example.com/germany-to-gpa",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any modern web browser",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "German 1.0鈥?.0 grade to US 4.0 GPA",
+        "Modified Bavarian formula (KMK / uni-assist standard)",
+        "WES-style band mapping",
+        "Admissions readout against common US cutoffs"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Country guides", "item": "https://example.com/country-guides" },
+        { "@type": "ListItem", "position": 3, "name": "Germany" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://example.com/germany-to-gpa#page",
+      "url": "https://example.com/germany-to-gpa",
+      "name": "German Grade to US GPA Converter",
+      "dateModified": "2026-08-12",
+      "primaryImageOfPage": null,
+      "mainEntity": { "@id": "https://example.com/germany-to-gpa#tool" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert a German grade to a US GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Two standard routes exist. The modified Bavarian formula, used by German universities and uni-assist to convert grades INTO the German scale, can be run in reverse; the result for a German 2.0 is roughly a 3.0 US GPA. More commonly in the US, evaluators map bands: 1.0鈥?.5 to 4.0, 1.6鈥?.5 to roughly 3.3鈥?.7, 2.6鈥?.5 to 2.3鈥?.0, and 3.6鈥?.0 to 1.7鈥?.0. Both are estimates 鈥?WES evaluates course by course."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a German 2.0 a good grade?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. The scale is inverted: 1.0 is the best possible grade and 4.0 is the minimum pass. A 2.0 sits in the 'gut' (good) band, equivalent to roughly a 3.3鈥?.7 US GPA. A 2.5 is on the edge of 'good' and still a respectable result."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the modified Bavarian formula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The standard German conversion for foreign grades, adopted by the KMK (Standing Conference of the Ministers of Education) in 2013 and used by uni-assist and most public universities. In its forward form it converts your grade to German: 1 + 3 脳 (Nmax 鈭?Nd) 梅 (Nmax 鈭?Nmin), where Nmax is the best achievable grade, Nmin the minimum pass, and Nd your grade. This page runs it in reverse to estimate a US GPA from a German grade."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does WES publish a German-to-GPA table?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. WES evaluates each course using its own institutional methodology and does not publish an official table. The band values on this page are reconstructions of common practice for planning purposes 鈥?your actual WES result is course-by-course and institution-specific."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is my German grade not simply 4 鈭?GPA or similar?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the scales don't line up one-to-one. A German 1.0 means 'the best' rather than a specific percentage, and German grading is stricter than US grading at the top end. Simple arithmetic translations ignore the grading culture on both sides, which is why band approaches and the Bavarian formula give more defensible estimates."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* page-specific tweaks only; everything else lives in site.css */
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="site-nav">
+  <a class="brand" href="index.html">CreditLab<small>transcripts, translated</small></a>
+  <nav aria-label="Converters">
+    <a href="index.html">Home</a>
+    <a href="grade-conversion.html">Grades</a>
+    <a href="credit-conversion.html">Credit conversion</a>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US</a>
+    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ielts-to-toefl.html">Languages</a>
+    <a href="country-guides.html" aria-current="page">Countries</a>
+  </nav>
+</header>
+
+<div class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="country-guides.html">Country guides</a></li>
+    <li><span aria-current="page">Germany</span></li>
+  </ol>
+</div>
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Country guide 路 Germany</span>
+    <span>路</span>
+    <span><b>The scale runs the wrong way 鈥?1.0 is the best</b></span>
+  </div>
+  <h1><span class="sys-eu">German grade</span> to <span class="sys-us">US GPA</span></h1>
+  <p class="standfirst">German grades run 1.0 (best) to 4.0 (pass) and 5.0 (fail) 鈥?the opposite direction of a US GPA. This converter gives you three estimates: the modified Bavarian formula, a WES-style band mapping, and the raw scale, so you can see the range instead of trusting one number.</p>
+</header>
+
+<!-- ============ CONVERTER ============ -->
+<div class="conv">
+  <div class="pane pane-in">
+    <div class="pane-tag">Your system</div>
+
+    <label for="grade">German grade (1.0 鈥?4.0, pass)</label>
+    <input type="number" id="grade" value="2.0" min="1.0" max="5.0" step="0.1" inputmode="decimal">
+
+    <div class="methods" role="radiogroup" aria-label="Conversion method">
+      <label class="m on" for="m1">
+        <input type="radio" name="method" id="m1" value="bav" checked>
+        <span>
+          <span class="m-name">Modified Bavarian formula</span>
+          <span class="m-note">The KMK / uni-assist standard, run in reverse to estimate your US GPA.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m2">
+        <input type="radio" name="method" id="m2" value="band">
+        <span>
+          <span class="m-name">WES-style bands</span>
+          <span class="m-note">A band mapping in the style of credential evaluators 鈥?typical values, not an official WES table.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m3">
+        <input type="radio" name="method" id="m3" value="raw">
+        <span>
+          <span class="m-name">Raw scale (rough)</span>
+          <span class="m-note">A simple 5 鈭?grade shortcut. Fast, but it flattens the grading culture on both sides.</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="pane pane-out" aria-live="polite">
+    <div class="pane-tag">US equivalent</div>
+
+    <div class="readout">
+      <div class="r-label">US GPA (4.0)</div>
+      <div class="r-value" id="gpa">3.0<span class="r-unit">/4.0</span></div>
+    </div>
+
+    <div class="readout">
+      <div class="r-label">German descriptor</div>
+      <div class="r-value minor" id="descr">Gut<span class="r-unit">2.0 = good</span></div>
+    </div>
+
+    <div class="workload">
+      <div>Method &nbsp;<b id="m-name">Bavarian formula</b></div>
+      <div>GPA points &nbsp;<b id="points">3.0</b></div>
+      <div>Interpretation &nbsp;<b id="sum">standard German method</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VERDICT ============ -->
+<div class="verdictbox">
+  <div class="verdictbox-tag">Where this sits for a US application</div>
+  <div aria-live="polite">
+    <p class="gverdict" id="verdict">A German 2.0 is roughly a <em>3.3鈥?.7</em> US GPA 鈥?solid, competitive standing.</p>
+    <p class="gverdict-note" id="verdict-note">That is 'gut' (good) on the German scale. Most US master's programmes want a 3.0 or better; selective ones look for 3.5+. The exact figure depends on the evaluator's course-by-course read, so treat it as a band, not a verdict.</p>
+  </div>
+
+  <div class="gscale" id="gscale">
+    <div class="gtrack"></div>
+    <div id="gticks"></div>
+    <div class="you" id="you" style="left:0%">
+      <div class="you-dot"></div>
+      <div class="you-lab" id="you-lab">you 路 3.0</div>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <span class="rel-tag">In the same family</span>
+  <a href="country-guides.html">All country guides</a>
+  <a href="percentage-to-gpa.html">Percentage 鈫?GPA converter</a>
+  <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+</div>
+
+<!-- ============ WHY INVERTED ============ -->
+<section>
+  <h2>Why a German 2.0 is a good grade</h2>
+  <p>On a US transcript a 2.0 reads as a C. On a German transcript a 2.0 reads as 'gut' 鈥?good 鈥?and is a competitive result for most programmes. The two scales run in opposite directions, and the confusion this causes is exactly why German grade conversion trips up more applicants than any other step.</p>
+
+  <div class="split">
+    <div>
+      <div class="sys-name">Germany</div>
+      <div class="unit">1.0 = best</div>
+      <p>1.0鈥?.5 sehr gut (very good), 1.6鈥?.5 gut (good), 2.6鈥?.5 befriedigend (satisfactory), 3.6鈥?.0 ausreichend (sufficient, minimum pass), 5.0 nicht bestanden (fail). Lower is better.</p>
+    </div>
+    <div>
+      <div class="sys-name">US 4.0</div>
+      <div class="unit">4.0 = best</div>
+      <p>4.0 A, 3.0 B, 2.0 C, 1.0 D, 0 F. Higher is better, and most graduate floors are set at 3.0 with selective programmes at 3.5.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:20px">The German system also grades more harshly at the top. A German 1.0 is genuinely exceptional 鈥?it is not the same achievement density as an American A every semester. Credential evaluators account for this when they read a transcript, which is one more reason a simple arithmetic flip (5 鈭?grade) is only a rough guide.</p>
+
+  <p style="margin-top:16px">And if your transcript carries ECTS as well, grades aren't the only thing that needs translating 鈥?<a href="ects-to-us-credits.html">convert your European credits to US credits</a> in the same pass.</p>
+</section>
+
+<!-- ============ METHODS ============ -->
+<section>
+  <h2>Three ways to run the conversion</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="num">METHOD 01</div>
+      <h3>Modified Bavarian formula</h3>
+      <p>The official German approach, adopted by the KMK in 2013 and used by uni-assist and most public universities. It converts foreign grades to the German scale; run in reverse it gives a defensible US estimate.</p>
+      <div class="formula">reverse: GPA 鈮?1 + 3路(Nmax 鈭?g) 梅 (Nmax 鈭?Nmin)</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 02</div>
+      <h3>WES-style bands</h3>
+      <p>A threshold mapping in the style of credential evaluators. Band values here are typical, reconstructed from practice 鈥?WES does not publish one table.</p>
+      <div class="formula">1.0鈥?.5 鈫?4.0<br>1.6鈥?.0 鈫?3.7 路 2.1鈥?.5 鈫?3.3</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 03</div>
+      <h3>Raw scale (rough)</h3>
+      <p>GPA 鈮?5 鈭?grade. Fast and memorable, but it ignores grading culture on both sides and flattens the top of the scale. Use it only to get a sense of magnitude.</p>
+      <div class="formula">2.0 鈫?3.0 路 1.3 鈫?3.7</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <h3>Which number do you actually use?</h3>
+    <p>The one your target programme requires. If the US programme accepts the transcript as-is, report the German grade and let them read it. If it requires a professional evaluation (WES, ECE or a NACES member), their course-by-course result is the number that counts. These estimates are for planning and for understanding what your transcript says to a US reader.</p>
+  </div>
+</section>
+
+<!-- ============ REFERENCE ============ -->
+<section>
+  <h2>The German scale at a glance</h2>
+  <table>
+    <thead>
+      <tr><th>German grade</th><th>Descriptor</th><th>Typical US GPA</th><th>Letter</th><th>Note</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>1.0 鈥?1.5</td><td>Sehr gut</td><td>4.0</td><td>A</td><td class="deg">Exceptional, top of cohort</td></tr>
+      <tr><td>1.6 鈥?2.0</td><td>Gut</td><td>3.7</td><td>A鈭?/td><td class="deg">Strong, common 'good' band</td></tr>
+      <tr><td>2.1 鈥?2.5</td><td>Gut</td><td>3.3</td><td>B+</td><td class="deg">Good 鈥?competitive for most programmes</td></tr>
+      <tr><td>2.6 鈥?3.0</td><td>Befriedigend</td><td>3.0</td><td>B</td><td class="deg">Satisfactory, still respectable</td></tr>
+      <tr><td>3.1 鈥?3.5</td><td>Befriedigend</td><td>2.7</td><td>B鈭?/td><td class="deg">Below 3.0, above the pass line</td></tr>
+      <tr><td>3.6 鈥?4.0</td><td>Ausreichend</td><td>2.3</td><td>C+</td><td class="deg">Sufficient 鈥?minimum pass territory</td></tr>
+      <tr><td>5.0</td><td>Nicht bestanden</td><td>0.0</td><td>F</td><td class="deg">Fail</td></tr>
+    </tbody>
+  </table>
+
+  <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">'Typical' is doing real work here: evaluators vary by institution, subject mix and grading culture. Treat these as planning ranges, not guaranteed outputs.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <h2>Questions students actually ask</h2>
+  <dl class="faq">
+    <div>
+      <dt>How do I convert a German grade to a US GPA?</dt>
+      <dd>Two standard routes exist. The modified Bavarian formula, used by German universities and uni-assist to convert INTO the German scale, can be run in reverse 鈥?a German 2.0 is roughly a 3.0. More commonly in the US, evaluators map bands: 1.0鈥?.5 to 4.0, 1.6鈥?.5 to 3.3鈥?.7, 2.6鈥?.5 to 2.3鈥?.0, 3.6鈥?.0 to 1.7鈥?.0. Both are estimates; WES evaluates course by course.</dd>
+    </div>
+    <div>
+      <dt>Is a German 2.0 a good grade?</dt>
+      <dd>Yes. The scale is inverted: 1.0 is the best and 4.0 is the minimum pass. A 2.0 is 'gut' (good), roughly a 3.3鈥?.7 US GPA. A 2.5 sits on the edge of good and is still respectable.</dd>
+    </div>
+    <div>
+      <dt>What is the modified Bavarian formula?</dt>
+      <dd>The standard German conversion for foreign grades, adopted by the KMK in 2013 and used by uni-assist and most public universities. Forward form: 1 + 3 脳 (Nmax 鈭?Nd) 梅 (Nmax 鈭?Nmin), where Nmax is the best achievable grade, Nmin the minimum pass, and Nd your grade. This page runs it in reverse for a US estimate.</dd>
+    </div>
+    <div>
+      <dt>Does WES publish a German-to-GPA table?</dt>
+      <dd>No. WES evaluates course by course and publishes no official table. The band values here are reconstructions of common practice for planning 鈥?your actual WES result is institution-specific.</dd>
+    </div>
+    <div>
+      <dt>Why is my German grade not a simple flip?</dt>
+      <dd>Because the scales don't line up one-to-one and the grading cultures differ. A German 1.0 means 'the best' rather than a specific percentage, and German grading is stricter at the top. Band approaches and the Bavarian formula give more defensible estimates than 5 鈭?grade.</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section>
+  <h2>Where these figures come from</h2>
+  <div class="sources">
+    <ul>
+      <li><span class="what">Modified Bavarian formula</span><span class="who"><a href="https://www.tum.de/en/studies/application/application-info-portal/grade-conversion-formula-for-grades-earned-outside-germany" rel="nofollow noopener" target="_blank">TUM 鈥?Grade Conversion using the Bavarian Formula</a>; <a href="https://www.kmk.org/fileadmin/Dateien/pdf/ZAB/Hochschulzugang_Beschluesse_der_KMK/GesNot05.pdf" rel="nofollow noopener" target="_blank">KMK resolution (GesNot05)</a></span></li>
+      <li><span class="what">German scale &amp; descriptors</span><span class="who">Standard German university grading practice (1.0 sehr gut 鈥?4.0 ausreichend, 5.0 nicht bestanden)</span></li>
+      <li><span class="what">WES-style band values</span><span class="who">Reconstruction of common credential-evaluation practice; WES does not publish an official table</span></li>
+      <li><span class="what">US 4.0 letter scale</span><span class="who">Typical US institution 4.0 letter scale</span></li>
+    </ul>
+    <p class="verified">Figures last verified August 2026 路 Band tables are reconstructions of common practice, not official WES output; WES results are course-by-course and institution-specific</p>
+  </div>
+</section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-col">
+    <strong>Grade converters</strong>
+    <a href="grade-conversion.html">Grade conversion hub</a>
+    <a href="percentage-to-gpa.html">Percentage 鈫?GPA</a>
+    <a href="gpa-to-percentage.html">GPA 鈫?percentage</a>
+    <a href="cgpa-to-gpa.html">CGPA 鈫?GPA</a>
+  </div>
+  <div class="foot-col">
+    <strong>Credit converters</strong>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="credit-conversion.html">Credit conversion hub</a>
+  </div>
+  <div class="foot-col">
+    <strong>Language scores</strong>
+    <a href="ielts-to-toefl.html">IELTS 鈫?TOEFL</a>
+  </div>
+  <div class="foot-col">
+    <strong>Country guides</strong>
+    <a href="country-guides.html">All country guides</a>
+    <a href="germany-to-gpa.html">Germany</a>
+    <a href="netherlands-to-gpa.html">Netherlands</a>
+    <a href="france-to-gpa.html">France</a>
+    <a href="india-to-gpa.html">India</a>
+    <a href="china-to-gpa.html">China</a>
+  </div>
+  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var grade = $('grade');
+  var gpa = $('gpa'), descr = $('descr'), mName = $('m-name'), points = $('points'), sum = $('sum');
+  var verdict = $('verdict'), vNote = $('verdict-note'), you = $('you'), youLab = $('you-lab'), gticks = $('gticks');
+
+  var BANDS = [[1.0,4.0],[1.6,3.7],[2.1,3.3],[2.6,3.0],[3.1,2.7],[3.6,2.3],[5.0,0]];
+
+  function descrOf(g){
+    if(g <= 1.5) return 'Sehr gut';
+    if(g <= 2.5) return 'Gut';
+    if(g <= 3.5) return 'Befriedigend';
+    if(g <= 4.0) return 'Ausreichend';
+    return 'Nicht bestanden';
+  }
+
+  function bandLookup(g){
+    for(var i=0;i<BANDS.length;i++){
+      if(g <= BANDS[i][0]){ return BANDS[i][1]; }
+    }
+    return 0;
+  }
+
+  function bavFormula(g){
+    /* reverse of the modified Bavarian formula, mapped onto a US 4.0 scale
+       forward: x = 1 + 3*(Nmax - Nd)/(Nmax - Nmin), Nmax=4.0 (German best), Nmin=1.0 (US low)
+       solving for Nd with German grade g as input */
+    var Nmax = 4.0, Nmin = 1.0;
+    return Nmax - (g - 1) / 3 * (Nmax - Nmin);
+  }
+
+  function round1(n){ return Math.round(n*10)/10; }
+
+  function currentMethod(){
+    var r = document.querySelector('input[name=method]:checked');
+    return r ? r.value : 'bav';
+  }
+
+  function renderTicks(){
+    gticks.innerHTML = '';
+    [[2.0,'under 2.0'],[2.5,'pass'],[3.0,'common floor'],[3.5,'top-50 ideal'],[4.0,'maximum']].forEach(function(t){
+      var d = document.createElement('div');
+      d.className = 'gtick';
+      d.style.left = (t[0]/4*100) + '%';
+      d.innerHTML = '<div class="gtick-lab" style="left:0"><b>' + t[0] + '</b>' + t[1] + '</div>';
+      gticks.appendChild(d);
+    });
+  }
+
+  function writeVerdict(g, method){
+    var v, n;
+    var gr = parseFloat(grade.value) || 2.0;
+    if(gr >= 5){
+      v = 'A German <em>5.0</em> 鈥?not passed.';
+      n = 'German transcripts do not carry a grade above 4.0 for a passed course; a 5.0 is a fail and would need to be repeated.';
+    } else if(gr > 3.5){
+      v = 'A German <em>' + gr.toFixed(1) + '</em> 鈥?ausreichend, the minimum pass band.';
+      n = 'Equivalent to roughly a 2.3 US GPA. Most US master\u2019s want a 3.0 or better, so this sits under the common floor 鈥?the rest of the application has to carry the load.';
+    } else if(gr > 2.5){
+      v = 'A German <em>' + gr.toFixed(1) + '</em> 鈥?befriedigend, around a 3.0 US GPA.';
+      n = 'This clears the common 3.0 floor for many US master\u2019s programmes but leaves less room at selective departments, which tend to look for a 3.5 equivalent (a German 2.5 or better).';
+    } else if(gr > 1.5){
+      v = 'A German <em>' + gr.toFixed(1) + '</em> 鈥?gut, roughly a 3.3鈥?.7 US GPA.';
+      n = 'A solid, competitive result for most US master\u2019s and for many selective programmes. Where it lands in that range depends on the evaluator\u2019s course-by-course read.';
+    } else {
+      v = 'A German <em>' + gr.toFixed(1) + '</em> 鈥?sehr gut, the top band.';
+      n = 'Roughly a 4.0 US GPA and the strongest German grade available. At this level the number is not the constraint 鈥?the shape of the transcript and the rest of the application carry the decision.';
+    }
+    verdict.innerHTML = v;
+    vNote.textContent = n;
+  }
+
+  function compute(){
+    var method = currentMethod();
+    var gr = parseFloat(grade.value) || 0;
+    if(gr < 1){ gr = 1; }
+    if(gr > 5){ gr = 5; }
+    var g, name, interp;
+
+    if(method === 'bav'){
+      g = Math.min(4, Math.max(0, bavFormula(gr)));
+      name = 'Modified Bavarian formula';
+      interp = 'standard German method';
+    } else if(method === 'band'){
+      g = bandLookup(gr);
+      name = 'WES-style bands';
+      interp = 'typical band value';
+    } else {
+      g = Math.min(4, Math.max(0, 5 - gr));
+      name = 'Raw scale (5 鈭?grade)';
+      interp = 'rough guide only';
+    }
+
+    g = round1(g);
+
+    gpa.innerHTML = g.toFixed(1) + '<span class="r-unit">/4.0</span>';
+    descr.innerHTML = descrOf(gr) + '<span class="r-unit">' + gr.toFixed(1) + ' on German scale</span>';
+    mName.textContent = name;
+    points.textContent = g.toFixed(1);
+    sum.textContent = interp;
+
+    var pct2 = (g/4)*100;
+    you.style.left = Math.max(0, Math.min(100, pct2)) + '%';
+    you.style.visibility = g > 0 ? 'visible' : 'hidden';
+    youLab.textContent = 'you 路 ' + g.toFixed(1);
+
+    writeVerdict(g, method);
+  }
+
+  var radios = document.querySelectorAll('input[name=method]');
+  Array.prototype.forEach.call(radios, function(r){
+    r.addEventListener('change', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.conv .m'), function(m){ m.classList.remove('on'); });
+      r.closest('.m').classList.add('on');
+      compute();
+    });
+  });
+
+  grade.addEventListener('input', compute);
+
+  renderTicks();
+  compute();
+})();
+</script>
+<script defer src="assets/js/site.js"></script>
+</body>
+</html>
+

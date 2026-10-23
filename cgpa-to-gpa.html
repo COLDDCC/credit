@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CGPA to GPA Converter 鈥?10-Point CGPA to US 4.0 GPA</title>
+<meta name="description" content="Convert a CGPA on the 10-point (or 7/5/4-point) scale to a US 4.0 GPA. See the linear formula, a WES-style estimate, and the UGC percentage route side by side. Sources cited.">
+<!-- TODO 涓婄嚎鍓嶆浛鎹㈡湰鏂囦欢鍐呮墍鏈?example.com 涓虹湡瀹炲煙鍚嶏紙canonical / og:url / schema 鍐呯殑 URL 鍏?5 澶勶級 -->
+<link rel="canonical" href="https://example.com/cgpa-to-gpa">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/cgpa-to-gpa">
+<meta property="og:title" content="CGPA to GPA Converter 鈥?10-Point CGPA to US 4.0 GPA">
+<meta property="og:description" content="Linear, WES-style and UGC-route CGPA鈫扜PA conversions side by side, with the institution caveats included.">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://example.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:title" content="CGPA to GPA Converter">
+<meta name="twitter:description" content="Three methods, the institution caveats included.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://example.com/cgpa-to-gpa#tool",
+      "name": "CGPA to GPA Converter",
+      "url": "https://example.com/cgpa-to-gpa",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any modern web browser",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "CGPA on 10 / 7 / 5 / 4-point scales to US 4.0 GPA",
+        "Linear, WES-style and UGC-route methods",
+        "Admissions readout against common US cutoffs"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Grade conversion", "item": "https://example.com/grade-conversion" },
+        { "@type": "ListItem", "position": 3, "name": "CGPA to GPA" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://example.com/cgpa-to-gpa#page",
+      "url": "https://example.com/cgpa-to-gpa",
+      "name": "CGPA to GPA Converter",
+      "dateModified": "2026-08-12",
+      "primaryImageOfPage": null,
+      "mainEntity": { "@id": "https://example.com/cgpa-to-gpa#tool" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert my CGPA to a US 4.0 GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The common formula is CGPA 梅 10 脳 4 鈥?an 8.5 becomes 3.4. Credential evaluators such as WES apply institution-tier adjustments that usually produce a slightly higher result, and India's UGC percentage route (CGPA 脳 9.5, then convert) tends to produce a lower one. The number your target programme uses depends on its required evaluation method."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is CGPA 梅 10 脳 4 accurate?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It's the widely used rough conversion and it tends to undervalue high CGPAs. An 8.0 becomes 3.2 by this rule, while WES-style evaluations of an 8.0 from a recognised Indian institution typically land around 3.4鈥?.6. Use the linear figure only when no evaluation method is specified."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a 7.5 CGPA good for an MS in the US?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Roughly a 3.0 by the linear rule 鈥?the common floor 鈥?and usually higher under WES-style mapping (about 3.3鈥?.5). It's competitive for many programmes; top-tier ones typically want 8.5+ (about 3.7+)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does my university matter for CGPA conversion?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. WES and ECE adjust for institution tier and grading culture. Also, Indian universities publish different official percentage formulas 鈥?Anna uses (CGPA 鈭?0.5) 脳 10, VTU uses (CGPA 鈭?0.75) 脳 10 鈥?which feeds into how a percentage is read."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the UGC formula?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "India's University Grants Commission guidance converts CGPA to percentage as CGPA 脳 9.5. An 8.0 CGPA gives 76%. That percentage then converts to a US GPA by whichever percentage rule you apply 鈥?which is why the UGC route usually comes out lower than the direct proportional CGPA鈫扜PA."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I report my CGPA or a converted GPA on a US application?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Report the CGPA exactly as on the transcript first. If you also give a converted figure, label the method ('8.5 CGPA 路 3.4 linear'). Programmes that require a professional evaluation will use that result rather than your self-converted number."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* page-specific tweaks only; everything else lives in site.css */
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="site-nav">
+  <a class="brand" href="index.html">CreditLab<small>transcripts, translated</small></a>
+  <nav aria-label="Converters">
+    <a href="index.html">Home</a>
+    <a href="grade-conversion.html" aria-current="page">Grades</a>
+    <a href="credit-conversion.html">Credit conversion</a>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US</a>
+    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ielts-to-toefl.html">Languages</a>
+    <a href="country-guides.html">Countries</a>
+  </nav>
+</header>
+
+<div class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="grade-conversion.html">Grade conversion</a></li>
+    <li><span aria-current="page">CGPA to GPA</span></li>
+  </ol>
+</div>
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Grade conversion</span>
+    <span>路</span>
+    <span><b>Institution and method change the result 鈥?here's the range</b></span>
+  </div>
+  <h1><span class="sys-eu">CGPA</span> to <span class="sys-us">US GPA</span></h1>
+  <p class="standfirst">Convert a 10-point CGPA (or 7/5/4-point) to the US 4.0 scale three ways 鈥?the linear rule of thumb, a WES-style estimate, and the UGC percentage route 鈥?because which method you use changes the number.</p>
+</header>
+
+<!-- ============ CONVERTER ============ -->
+<div class="conv">
+  <div class="pane pane-in">
+    <div class="pane-tag">Your system</div>
+
+    <label for="cgpa">CGPA score</label>
+    <input type="number" id="cgpa" value="8.5" min="0" max="10" step="0.01" inputmode="decimal">
+
+    <label for="scale" style="margin-top:20px">Your scale</label>
+    <select id="scale">
+      <option value="10" selected>10-point (India, etc.)</option>
+      <option value="7">7-point (Australia, etc.)</option>
+      <option value="5">5-point (Nigeria, etc.)</option>
+      <option value="4">4-point</option>
+    </select>
+
+    <div class="methods" role="radiogroup" aria-label="Conversion method">
+      <label class="m on" for="m1">
+        <input type="radio" name="method" id="m1" value="linear" checked>
+        <span>
+          <span class="m-name">Linear 梅 scale 脳 4</span>
+          <span class="m-note">The common rule of thumb. Reproducible, and the number most forms assume.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m2">
+        <input type="radio" name="method" id="m2" value="wes">
+        <span>
+          <span class="m-name">WES-style estimate</span>
+          <span class="m-note">Tier-adjusted in the manner of credential evaluators; mainly documented for the Indian 10-point scale.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m3">
+        <input type="radio" name="method" id="m3" value="ugc">
+        <span>
+          <span class="m-name">UGC percentage route</span>
+          <span class="m-note">CGPA 鈫?percentage via the UGC formula, then percentage 鈫?GPA. Tends to read lower.</span>
+        </span>
+      </label>
+    </div>
+  </div>
+
+  <div class="pane pane-out" aria-live="polite">
+    <div class="pane-tag">US equivalent</div>
+
+    <div class="readout">
+      <div class="r-label">US GPA (4.0)</div>
+      <div class="r-value" id="gpa">3.4<span class="r-unit">/4.0</span></div>
+    </div>
+
+    <div class="readout">
+      <div class="r-label">Letter grade</div>
+      <div class="r-value minor" id="letter">B+<span class="r-unit">US scale</span></div>
+    </div>
+
+    <div class="workload">
+      <div>Method &nbsp;<b id="m-name">Linear (梅10 脳 4)</b></div>
+      <div>UGC percentage &nbsp;<b id="ugc-pct">80.8%</b></div>
+      <div>Interpretation &nbsp;<b id="sum">rule-of-thumb value</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VERDICT ============ -->
+<div class="verdictbox">
+  <div class="verdictbox-tag">Where this sits for a US application</div>
+  <div aria-live="polite">
+    <p class="gverdict" id="verdict">3.4 clears the common 3.0 floor 鈥?<em>good standing</em> for most US master's programmes.</p>
+    <p class="gverdict-note" id="verdict-note">Most programmes want a 3.0 minimum; selective ones start around 3.5. Which of the three numbers you quote depends on the evaluation method the programme requires 鈥?report the CGPA and let their evaluation produce the rest.</p>
+  </div>
+
+  <div class="gscale" id="gscale">
+    <div class="gtrack"></div>
+    <div id="gticks"></div>
+    <div class="you" id="you" style="left:0%">
+      <div class="you-dot"></div>
+      <div class="you-lab" id="you-lab">you 路 3.4</div>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <span class="rel-tag">In the same family</span>
+  <a href="percentage-to-gpa.html">Percentage 鈫?GPA converter</a>
+  <a href="gpa-to-percentage.html">GPA 鈫?percentage converter</a>
+</div>
+
+<!-- ============ WHY METHODS DIFFER ============ -->
+<section>
+  <h2>Why the method changes the answer</h2>
+  <p>A CGPA is one number on a 10-point scale; a US GPA is a credit-weighted average of letter grades. Sliding the CGPA straight across (梅10 脳 4) is the most common shortcut, but evaluators, Indian regulators and individual universities each have their own reading 鈥?and they land in different places.</p>
+
+  <div class="split">
+    <div>
+      <div class="sys-name">Linear</div>
+      <div class="unit">8.5 鈫?3.4</div>
+      <p>CGPA 梅 10 脳 4. Simple and reproducible. It treats the CGPA as a pure fraction of the maximum, which is fair as a default and systematic about undervaluing the top of the scale.</p>
+    </div>
+    <div>
+      <div class="sys-name">WES-style</div>
+      <div class="unit">8.5 鈫?鈮?.7</div>
+      <p>Tier-adjusted, course-by-course reading as credential evaluators apply it. For recognised Indian institutions it typically lands above the linear figure 鈥?8.0 around 3.4鈥?.6, 8.5 around 3.7鈥?.9.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:20px">The UGC route muddies it further: India's University Grants Commission converts CGPA to percentage as <strong>CGPA 脳 9.5</strong> (8.5 鈫?80.8%), and that percentage, pushed back through a 梅25 GPA rule, gives about 3.2 鈥?<em>lower</em> than the direct linear figure. Two official-looking methods, two different answers. That's why this page shows all three and why the one that matters is whatever your target programme requires.</p>
+
+  <p style="margin-top:16px">If your transcript carries credits as well, pair the grade conversion with <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a> or the reverse 鈥?credits and grades travel together.</p>
+</section>
+
+<!-- ============ METHODS ============ -->
+<section>
+  <h2>Three ways to run the conversion</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="num">METHOD 01</div>
+      <h3>Linear</h3>
+      <p>CGPA 梅 scale-max 脳 4. The standard assumption behind most percentage and GPA fields. Fine as a default, conservative at the top of the scale.</p>
+      <div class="formula">GPA = (CGPA 梅 10) 脳 4</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 02</div>
+      <h3>WES-style estimate</h3>
+      <p>Tier-adjusted reading in the manner of WES / ECE. Documented mainly for the Indian 10-point scale, where it typically returns higher than linear for strong CGPAs. WES does not publish a fixed table; this is a typical-value estimate.</p>
+      <div class="formula">8.0 鈫?鈮?.4鈥?.6 路 8.5 鈫?鈮?.7鈥?.9</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 03</div>
+      <h3>UGC percentage route</h3>
+      <p>CGPA 鈫?percentage using India's UGC formula, then percentage 鈫?GPA. Valid for the 10-point scale; useful when a form asks for a percentage first.</p>
+      <div class="formula">% = CGPA 脳 9.5 鈫?GPA = % 梅 25</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <h3>Your university's published formula wins</h3>
+    <p>Indian universities publish different percentage formulas 鈥?Anna uses (CGPA 鈭?0.5) 脳 10, VTU (CGPA 鈭?0.75) 脳 10 鈥?and your registrar's figure overrides any general rule. Report the transcript CGPA as-is and let the required evaluation method produce the GPA.</p>
+  </div>
+</section>
+
+<!-- ============ REFERENCE ============ -->
+<section>
+  <h2>Common totals at a glance (10-point)</h2>
+  <table>
+    <thead>
+      <tr><th>CGPA /10</th><th>Linear</th><th>WES-style 鈮?/th><th>UGC % (脳9.5)</th><th>What it's read as</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>9.5</td><td>3.8</td><td>3.9 鈥?4.0</td><td>90.3</td><td class="deg">Exceptional</td></tr>
+      <tr><td>9.0</td><td>3.6</td><td>3.8 鈥?3.9</td><td>85.5</td><td class="deg">Top tier</td></tr>
+      <tr><td>8.5</td><td>3.4</td><td>3.7 鈥?3.9</td><td>80.8</td><td class="deg">Strong; competitive everywhere</td></tr>
+      <tr><td>8.0</td><td>3.2</td><td>3.4 鈥?3.6</td><td>76.0</td><td class="deg">Grad-school-competitive at many programmes</td></tr>
+      <tr><td>7.5</td><td>3.0</td><td>3.3 鈥?3.5</td><td>71.3</td><td class="deg">First-division; clears the 3.0 floor</td></tr>
+      <tr><td>7.0</td><td>2.8</td><td>3.0 鈥?3.2</td><td>66.5</td><td class="deg">Below the 3.0 floor on linear</td></tr>
+      <tr><td>6.5</td><td>2.6</td><td>2.8 鈥?3.0</td><td>61.8</td><td class="deg">Needs strong compensating signals</td></tr>
+      <tr><td>6.0</td><td>2.4</td><td>2.6 鈥?2.8</td><td>57.0</td><td class="deg">Below most graduate floors</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">WES-style figures are typical-value ranges across recognised Indian institutions; exact results vary by institution tier and course mix.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <h2>Questions students actually ask</h2>
+  <dl class="faq">
+    <div>
+      <dt>How do I convert my CGPA to a US 4.0 GPA?</dt>
+      <dd>The common formula is CGPA 梅 10 脳 4 鈥?an 8.5 becomes 3.4. WES-style evaluations typically produce a slightly higher result for recognised institutions, and the UGC percentage route a slightly lower one. The number your target programme uses depends on its required evaluation method.</dd>
+    </div>
+    <div>
+      <dt>Is CGPA 梅 10 脳 4 accurate?</dt>
+      <dd>It's the widely used rough conversion and it tends to undervalue high CGPAs. An 8.0 becomes 3.2 by this rule, while WES-style evaluations usually land around 3.4鈥?.6. Use the linear figure only when no evaluation method is specified.</dd>
+    </div>
+    <div>
+      <dt>Is a 7.5 CGPA good for an MS in the US?</dt>
+      <dd>Roughly a 3.0 by the linear rule 鈥?the common floor 鈥?and usually higher under WES-style mapping (about 3.3鈥?.5). Competitive for many programmes; top-tier ones typically want 8.5+.</dd>
+    </div>
+    <div>
+      <dt>Does my university matter for CGPA conversion?</dt>
+      <dd>Yes. WES and ECE adjust for institution tier and grading culture, and Indian universities publish different official percentage formulas (Anna: (CGPA 鈭?0.5) 脳 10; VTU: (CGPA 鈭?0.75) 脳 10) that shape how the transcript is read.</dd>
+    </div>
+    <div>
+      <dt>What is the UGC formula?</dt>
+      <dd>India's University Grants Commission guidance converts CGPA to percentage as CGPA 脳 9.5. An 8.0 CGPA gives 76%. That percentage then converts to a US GPA by whatever percentage rule you apply, which is why the route usually reads lower than the direct proportional conversion.</dd>
+    </div>
+    <div>
+      <dt>Should I report my CGPA or a converted GPA on a US application?</dt>
+      <dd>Report the CGPA exactly as on the transcript first. If you also give a converted figure, label the method. Programmes that require a professional evaluation will use that result rather than your self-converted number.</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section>
+  <h2>Where these figures come from</h2>
+  <div class="sources">
+    <ul>
+      <li><span class="what">Course-by-course evaluation method</span><span class="who"><a href="https://apps.wes.org/igpa-calculator/" rel="nofollow noopener" target="_blank">WES iGPA Calculator 鈥?World Education Services</a></span></li>
+      <li><span class="what">CGPA 鈫?percentage guidance</span><span class="who"><a href="https://www.ugc.gov.in/" rel="nofollow noopener" target="_blank">University Grants Commission (India) 鈥?CGPA to percentage resolution (CGPA 脳 9.5)</a></span></li>
+      <li><span class="what">University-specific percentage formulas</span><span class="who">Published registrar formulas (e.g., Anna University (CGPA 鈭?0.5) 脳 10; VTU (CGPA 鈭?0.75) 脳 10)</span></li>
+      <li><span class="what">WES-style typical ranges</span><span class="who">Common credential-evaluation practice for Indian 10-point CGPAs</span></li>
+    </ul>
+    <p class="verified">Figures last verified August 2026 路 WES-style values are typical ranges, not official WES output; the WES result is course-by-course and institution-specific</p>
+  </div>
+</section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-col">
+    <strong>Grade converters</strong>
+    <a href="grade-conversion.html">Grade conversion hub</a>
+    <a href="percentage-to-gpa.html">Percentage 鈫?GPA</a>
+    <a href="gpa-to-percentage.html">GPA 鈫?percentage</a>
+    <a href="cgpa-to-gpa.html">CGPA 鈫?GPA</a>
+  </div>
+  <div class="foot-col">
+    <strong>Credit converters</strong>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="credit-conversion.html">Credit conversion hub</a>
+  </div>
+  <div class="foot-col">
+    <strong>Language scores</strong>
+    <a href="ielts-to-toefl.html">IELTS 鈫?TOEFL</a>
+  </div>
+  <div class="foot-col">
+    <strong>Country guides</strong>
+    <a href="country-guides.html">All country guides</a>
+    <a href="germany-to-gpa.html">Germany</a>
+    <a href="netherlands-to-gpa.html">Netherlands</a>
+    <a href="france-to-gpa.html">France</a>
+    <a href="india-to-gpa.html">India</a>
+    <a href="china-to-gpa.html">China</a>
+  </div>
+  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var cgpa = $('cgpa'), scale = $('scale');
+  var gpa = $('gpa'), letter = $('letter'), mName = $('m-name'), ugcPct = $('ugc-pct'), sum = $('sum');
+  var verdict = $('verdict'), vNote = $('verdict-note'), you = $('you'), youLab = $('you-lab'), gticks = $('gticks');
+
+  function round1(n){ return Math.round(n*10)/10; }
+
+  function letterOf(g){
+    if(g >= 3.7) return 'A';
+    if(g >= 3.3) return 'B+';
+    if(g >= 3.0) return 'B';
+    if(g >= 2.7) return 'B鈭?;
+    if(g >= 2.3) return 'C+';
+    if(g >= 2.0) return 'C';
+    if(g >= 1.7) return 'C鈭?;
+    if(g >= 1.0) return 'D';
+    return 'F';
+  }
+
+  function currentMethod(){
+    var r = document.querySelector('input[name=method]:checked');
+    return r ? r.value : 'linear';
+  }
+
+  function maxOf(){ return parseFloat(scale.value); }
+
+  // tier-style estimate for the Indian 10-point scale (typical ranges mid-values)
+  function wesIndia(c){
+    var bump;
+    if(c >= 9.5) bump = 0.15;
+    else if(c >= 9.0) bump = 0.25;
+    else if(c >= 8.5) bump = 0.3;
+    else if(c >= 8.0) bump = 0.25;
+    else if(c >= 7.5) bump = 0.2;
+    else if(c >= 7.0) bump = 0.15;
+    else if(c >= 6.0) bump = 0.1;
+    else bump = 0;
+    return Math.min(4, (c/10*4 + bump));
+  }
+
+  function renderTicks(){
+    gticks.innerHTML = '';
+    [[2.0,'pass'],[3.0,'common floor'],[3.5,'top-50 ideal'],[4.0,'maximum']].forEach(function(t){
+      var d = document.createElement('div');
+      d.className = 'gtick';
+      d.style.left = (t[0]/4*100) + '%';
+      d.innerHTML = '<div class="gtick-lab" style="left:0"><b>' + t[0] + '</b>' + t[1] + '</div>';
+      gticks.appendChild(d);
+    });
+  }
+
+  function writeVerdict(g){
+    var v, n;
+    if(!(g > 0)){
+      v = 'Enter a CGPA to see where it lands.';
+      n = 'The scale runs 0鈥?.0, marked with the cutoffs most US graduate programmes actually use.';
+    } else if(g < 2.0){
+      v = 'Below <em>2.0</em> 鈥?under the floor for most US graduate programmes.';
+      n = 'At this level the rest of the application has to carry the load. Some programmes do look past the number.';
+    } else if(g < 3.0){
+      v = '<em>' + g.toFixed(1) + '</em> 鈥?passes a few programme floors, but most competitive admissions want more.';
+      n = 'The common 3.0 minimum is still ahead. Programmes that weigh the whole file rather than a cutoff are where a total like this competes.';
+    } else if(g < 3.5){
+      v = '<em>' + g.toFixed(1) + '</em> 鈥?clears the common 3.0 floor, good standing for most US master\u2019s programmes.';
+      n = 'Selective programmes and many top-50 departments start closer to 3.5. The exact figure depends on the evaluation method the programme requires.';
+    } else if(g < 3.7){
+      v = '<em>' + g.toFixed(1) + '</em> 鈥?competitive for selective programmes and most top-50 master\u2019s.';
+      n = 'You clear the informal 3.5 line used by many competitive departments.';
+    } else if(g < 4.0){
+      v = '<em>' + g.toFixed(1) + '</em> 鈥?strong, at the level most competitive programmes want.';
+      n = 'Firmly competitive across the board; the number is not the constraint.';
+    } else {
+      v = '<em>4.0</em> 鈥?the top of the scale.';
+      n = 'An exceptional record. The transcript behind it matters more than the last decimal.';
+    }
+    verdict.innerHTML = v;
+    vNote.textContent = n;
+  }
+
+  function compute(){
+    var method = currentMethod();
+    var c = parseFloat(cgpa.value) || 0;
+    var m = maxOf();
+    var g, name, sumTxt, pctStr = '鈥?;
+
+    if(method === 'linear'){
+      g = (m > 0) ? c/m*4 : 0;
+      name = 'Linear (梅' + m + ' 脳 4)';
+      sumTxt = 'rule-of-thumb value';
+      if(m === 10){ pctStr = (c*9.5).toFixed(1) + '%'; }
+    } else if(method === 'wes'){
+      if(m === 10){
+        g = wesIndia(c);
+        name = 'WES-style estimate';
+        sumTxt = 'typical value (India 10-pt)';
+        pctStr = (c*9.5).toFixed(1) + '%';
+      } else {
+        g = (m > 0) ? c/m*4 : 0;
+        name = 'WES-style (n/a 鈫?linear)';
+        sumTxt = 'WES-style mainly for India 10-pt';
+      }
+    } else {
+      if(m === 10){
+        var p = c*9.5;
+        g = p/25;
+        pctStr = p.toFixed(1) + '%';
+        name = 'UGC route (脳9.5 then 梅25)';
+        sumTxt = 'percentage via UGC';
+      } else {
+        var p2 = (m > 0) ? c/m*100 : 0;
+        g = p2/25;
+        pctStr = p2.toFixed(1) + '%';
+        name = 'Percentage route (梅' + m + ' 脳 100)';
+        sumTxt = 'percentage first';
+      }
+    }
+
+    g = round1(g);
+
+    gpa.innerHTML = g.toFixed(1) + '<span class="r-unit">/4.0</span>';
+    letter.innerHTML = letterOf(g) + '<span class="r-unit">US scale</span>';
+    mName.textContent = name;
+    ugcPct.innerHTML = pctStr;
+    sum.textContent = sumTxt;
+
+    var pct2 = (g/4)*100;
+    you.style.left = Math.max(0, Math.min(100, pct2)) + '%';
+    you.style.visibility = g > 0 ? 'visible' : 'hidden';
+    youLab.textContent = 'you 路 ' + g.toFixed(1);
+
+    writeVerdict(g);
+  }
+
+  var radios = document.querySelectorAll('input[name=method]');
+  Array.prototype.forEach.call(radios, function(r){
+    r.addEventListener('change', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.conv .m'), function(m){ m.classList.remove('on'); });
+      r.closest('.m').classList.add('on');
+      compute();
+    });
+  });
+
+  cgpa.addEventListener('input', compute);
+  scale.addEventListener('change', compute);
+
+  renderTicks();
+  compute();
+})();
+</script>
+<script defer src="assets/js/site.js"></script>
+</body>
+</html>

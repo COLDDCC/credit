@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grade conversion hub 鈥?Percentage, GPA &amp; CGPA</title>
+<meta name="description" content="Convert between percentage, US 4.0 GPA and CGPA with the methods shown side by side, and the caveats included. Sources cited.">
+<!-- TODO 涓婄嚎鍓嶆浛鎹㈡湰鏂囦欢鍐呮墍鏈?example.com 涓虹湡瀹炲煙鍚嶏紙canonical / og:url 鍏?2 澶勶級 -->
+<link rel="canonical" href="https://example.com/grade-conversion">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/grade-conversion">
+<meta property="og:title" content="Grade conversion hub 鈥?Percentage, GPA &amp; CGPA">
+<meta property="og:description" content="Percentage 鈫?GPA 鈫?CGPA converters, with the method differences and caveats included.">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://example.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<style>
+.hub{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+.hub a{
+  background:var(--card);border:1.5px solid var(--rule);padding:22px;
+  display:block;color:var(--ink);text-decoration:none;
+}
+.hub a:hover{border-color:var(--eu)}
+.hub .dir{
+  font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--us);display:block;margin-bottom:10px;
+}
+.hub h3{color:var(--eu);margin-bottom:6px}
+.hub p{font-size:14.5px;color:var(--muted);margin-bottom:0}
+.hub .go{
+  font-family:var(--display);font-size:12.5px;font-weight:700;color:var(--eu);
+  display:block;margin-top:14px;
+}
+.hub .go::after{content:" 鈫?}
+.hub .wide{grid-column:1 / -1}
+
+@media (max-width:760px){ .hub{grid-template-columns:1fr} .hub .wide{grid-column:auto} }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="site-nav">
+  <a class="brand" href="index.html">CreditLab<small>transcripts, translated</small></a>
+  <nav aria-label="Converters">
+    <a href="index.html">Home</a>
+    <a href="grade-conversion.html" aria-current="page">Grades</a>
+    <a href="credit-conversion.html">Credit conversion</a>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US</a>
+    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ielts-to-toefl.html">Languages</a>
+    <a href="country-guides.html">Countries</a>
+  </nav>
+</header>
+
+<div class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><span aria-current="page">Grade conversion</span></li>
+  </ol>
+</div>
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Grade conversion</span>
+    <span>路</span>
+    <span><b>Methods shown side by side 鈥?no single magic formula</b></span>
+  </div>
+  <h1>Grade <span class="sys-eu">conversion</span></h1>
+  <p class="standfirst">Convert between percentage, US 4.0 GPA and CGPA. Every converter here shows the method differences instead of hiding them, because the method you pick changes the number 鈥?and which method a US programme uses is not up to you.</p>
+</header>
+
+<section>
+  <h2>Converters</h2>
+  <div class="hub">
+    <a href="percentage-to-gpa.html">
+      <span class="dir">Percentage 鈫?US</span>
+      <h3>Percentage to GPA</h3>
+      <p>The biggest audience and the most abused conversion. Simple 梅25, WES-style bands for China and India, and university algorithms side by side.</p>
+      <span class="go">Open the converter</span>
+    </a>
+
+    <a href="gpa-to-percentage.html">
+      <span class="dir">US 鈫?Percentage</span>
+      <h3>GPA to percentage</h3>
+      <p>The reverse is a looser fit. Linear 脳25, the letter-band range it implies, and your university factor 鈥?with the caveat built in.</p>
+      <span class="go">Open the converter</span>
+    </a>
+
+    <a href="cgpa-to-gpa.html" class="wide">
+      <span class="dir">CGPA 鈫?US</span>
+      <h3>CGPA to GPA</h3>
+      <p>For Indian 10-point transcripts and other scales. Linear, WES-style and the UGC percentage route 鈥?the three read differently, so you get all three.</p>
+      <span class="go">Open the converter</span>
+    </a>
+  </div>
+</section>
+
+<section>
+  <h2>Why the method matters</h2>
+  <div class="split">
+    <div>
+      <div class="sys-name">Same score</div>
+      <div class="unit">three answers</div>
+      <p>An 8.5 CGPA is 3.4 linear, 鈮?.7 under WES-style mapping, and 鈮?.2 via the UGC percentage route. All three are defensible; none is 'the' answer.</p>
+    </div>
+    <div>
+      <div class="sys-name">Grading cultures differ</div>
+      <div class="unit">90 鈮?90</div>
+      <p>A 90 in China or India is strong work; a 90 in the US is often a B. Evaluators adjust for this 鈥?which is why raw percentage-to-letter shortcuts mislead.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:20px">The one that matters is the method your target programme requires 鈥?often a professional evaluation from WES, ECE or a NACES member. Use these converters to plan and to understand the range; submit the transcript.</p>
+
+  <p style="margin-top:16px">Credits convert separately from grades. When your transcript carries ECTS, <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a> and its <a href="american-credit-hours-to-ects.html">reverse</a> live over on the credit side.</p>
+</section>
+
+<section>
+  <h2>Sources</h2>
+  <div class="sources">
+    <ul>
+      <li><span class="what">Course-by-course evaluation method</span><span class="who"><a href="https://apps.wes.org/igpa-calculator/" rel="nofollow noopener" target="_blank">WES iGPA Calculator 鈥?World Education Services</a></span></li>
+      <li><span class="what">CGPA 鈫?percentage guidance</span><span class="who"><a href="https://www.ugc.gov.in/" rel="nofollow noopener" target="_blank">University Grants Commission (India) 鈥?CGPA to percentage resolution (CGPA 脳 9.5)</a></span></li>
+      <li><span class="what">University-specific formulas</span><span class="who">Published registrar conversion tables (e.g., 鍖椾含澶у 4.0 绠楁硶, Anna / VTU percentage formulas)</span></li>
+      <li><span class="what">US letter / percentage scale</span><span class="who">Typical US institution 4.0 letter scale</span></li>
+    </ul>
+    <p class="verified">Figures last verified August 2026 路 Band tables are reconstructions of common practice, not official WES output; WES results are course-by-course and institution-specific</p>
+  </div>
+</section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-col">
+    <strong>Grade converters</strong>
+    <a href="grade-conversion.html">Grade conversion hub</a>
+    <a href="percentage-to-gpa.html">Percentage 鈫?GPA</a>
+    <a href="gpa-to-percentage.html">GPA 鈫?percentage</a>
+    <a href="cgpa-to-gpa.html">CGPA 鈫?GPA</a>
+  </div>
+  <div class="foot-col">
+    <strong>Credit converters</strong>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="credit-conversion.html">Credit conversion hub</a>
+  </div>
+  <div class="foot-col">
+    <strong>Language scores</strong>
+    <a href="ielts-to-toefl.html">IELTS 鈫?TOEFL</a>
+  </div>
+  <div class="foot-col">
+    <strong>Country guides</strong>
+    <a href="country-guides.html">All country guides</a>
+    <a href="germany-to-gpa.html">Germany</a>
+    <a href="netherlands-to-gpa.html">Netherlands</a>
+    <a href="france-to-gpa.html">France</a>
+    <a href="india-to-gpa.html">India</a>
+    <a href="china-to-gpa.html">China</a>
+  </div>
+  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+</footer>
+
+<script defer src="assets/js/site.js"></script>
+</body>
+</html>

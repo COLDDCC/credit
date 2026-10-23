@@ -1,0 +1,503 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GPA to Percentage Converter 鈥?US 4.0 GPA Back to a Percentage</title>
+<meta name="description" content="Convert a US 4.0 GPA to a percentage. See the linear 脳25 result, the letter-band range, and your own university formula side by side 鈥?with the caveats on why the reverse isn't exact. Sources cited.">
+<!-- TODO 涓婄嚎鍓嶆浛鎹㈡湰鏂囦欢鍐呮墍鏈?example.com 涓虹湡瀹炲煙鍚嶏紙canonical / og:url / schema 鍐呯殑 URL 鍏?5 澶勶級 -->
+<link rel="canonical" href="https://example.com/gpa-to-percentage">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://example.com/gpa-to-percentage">
+<meta property="og:title" content="GPA to Percentage Converter 鈥?US 4.0 GPA Back to a Percentage">
+<meta property="og:description" content="GPA to percentage with the caveats included: linear, letter-band and university-formula results side by side.">
+<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://example.com/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:title" content="GPA to Percentage Converter">
+<meta name="twitter:description" content="Three methods, with an honest note on why the reverse conversion isn't exact.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="assets/css/site.css">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebApplication",
+      "@id": "https://example.com/gpa-to-percentage#tool",
+      "name": "GPA to Percentage Converter",
+      "url": "https://example.com/gpa-to-percentage",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "Any modern web browser",
+      "isAccessibleForFree": true,
+      "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+      "featureList": [
+        "US 4.0 GPA to percentage",
+        "Linear, letter-band and university-formula methods",
+        "Admissions readout against common US cutoffs"
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://example.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Grade conversion", "item": "https://example.com/grade-conversion" },
+        { "@type": "ListItem", "position": 3, "name": "GPA to percentage" }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://example.com/gpa-to-percentage#page",
+      "url": "https://example.com/gpa-to-percentage",
+      "name": "GPA to Percentage Converter",
+      "dateModified": "2026-08-12",
+      "primaryImageOfPage": null,
+      "mainEntity": { "@id": "https://example.com/gpa-to-percentage#tool" }
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How do I convert a 4.0 GPA back to a percentage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The common rule multiplies by 25 (3.4 鈫?85%). The reverse is a looser fit than the forward direction, because a GPA is an average of letter grades while a percentage is one number 鈥?most institutions treat 3.4 as the '85鈥?9% band' rather than an exact 85."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a 3.0 GPA equal to 75%?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "By the linear rule, yes. On a US letter scale a 3.0 is a B, which typically sits in the 80鈥?4% range on a 100-point scale. The answer depends entirely on which convention you're converting through."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why can't I reverse a WES-style conversion exactly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Because the forward conversion maps wide percentage bands onto single GPA points. Going backwards, one GPA can sit anywhere inside a percentage band, so the honest output is a range, not one number."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What percentage is a 3.7 GPA?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "92.5% by the linear rule. On the US letter scale a 3.7 is an A鈭? which typically corresponds to the 90鈥?4% range. Report whichever your target institution expects, and label the method."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I convert my US GPA to a percentage for a European application?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usually not. European applications are read on the institution's own terms 鈥?a US 4.0 transcript plus its grading key travels better than a self-converted percentage. If a form forces a percentage, give the linear value and add 'converted, GPA 脳25'."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+
+<style>
+/* page-specific tweaks only; everything else lives in site.css */
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="site-nav">
+  <a class="brand" href="index.html">CreditLab<small>transcripts, translated</small></a>
+  <nav aria-label="Converters">
+    <a href="index.html">Home</a>
+    <a href="grade-conversion.html" aria-current="page">Grades</a>
+    <a href="credit-conversion.html">Credit conversion</a>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US</a>
+    <a href="american-credit-hours-to-ects.html">US 鈫?ECTS</a>
+    <a href="ielts-to-toefl.html">Languages</a>
+    <a href="country-guides.html">Countries</a>
+  </nav>
+</header>
+
+<div class="crumbs" aria-label="Breadcrumb">
+  <ol>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="grade-conversion.html">Grade conversion</a></li>
+    <li><span aria-current="page">GPA to percentage</span></li>
+  </ol>
+</div>
+
+<header class="mast">
+  <div class="eyebrow">
+    <span>Grade conversion</span>
+    <span>路</span>
+    <span><b>The reverse is a looser fit 鈥?here's the honest range</b></span>
+  </div>
+  <h1><span class="sys-us">GPA</span> to <span class="sys-eu">percentage</span></h1>
+  <p class="standfirst">Turn a US 4.0 GPA back into a percentage 鈥?by the linear rule, by the letter band it implies, and by your university's formula. The reverse direction is not an exact inverse; this page shows you the range instead of pretending otherwise.</p>
+</header>
+
+<!-- ============ CONVERTER ============ -->
+<div class="conv">
+  <div class="pane pane-in">
+    <div class="pane-tag">US system</div>
+
+    <label for="gpa">US GPA (0.00鈥?.00)</label>
+    <input type="number" id="gpa" value="3.4" min="0" max="4" step="0.01" inputmode="decimal">
+
+    <div class="methods" role="radiogroup" aria-label="Conversion method">
+      <label class="m on" for="m1">
+        <input type="radio" name="method" id="m1" value="linear" checked>
+        <span>
+          <span class="m-name">Linear 脳 25</span>
+          <span class="m-note">The common rule of thumb. Simple, and the number most forms expect.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m2">
+        <input type="radio" name="method" id="m2" value="band">
+        <span>
+          <span class="m-name">US letter-band range</span>
+          <span class="m-note">Where that GPA usually sits on a 100-point US scale 鈥?an honest range, not a fake precision.</span>
+        </span>
+      </label>
+
+      <label class="m" for="m3">
+        <input type="radio" name="method" id="m3" value="custom">
+        <span>
+          <span class="m-name">Your university formula</span>
+          <span class="m-note">Some institutions multiply by a factor other than 25.</span>
+        </span>
+      </label>
+
+      <div class="sub-fields" id="f-custom">
+        <label for="factor">Multiply GPA by</label>
+        <input type="number" id="factor" value="25" min="20" max="25" step="1">
+        <p class="hint">A few institutions use 脳24 or 脳25.5-style adjustments; if yours publishes a factor, use it. Otherwise stick with 脳25.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="pane pane-out" aria-live="polite">
+    <div class="pane-tag">Percentage equivalent</div>
+
+    <div class="readout">
+      <div class="r-label">Percentage</div>
+      <div class="r-value" id="pct">85<span class="r-unit">%</span></div>
+    </div>
+
+    <div class="readout">
+      <div class="r-label">Letter &amp; band</div>
+      <div class="r-value minor" id="band">B+ 路 85鈥?9%<span class="r-unit">US scale</span></div>
+    </div>
+
+    <div class="workload">
+      <div>Method &nbsp;<b id="m-name">Linear 脳25</b></div>
+      <div>GPA points &nbsp;<b id="points">3.4</b></div>
+      <div>Interpretation &nbsp;<b id="sum">direct linear value</b></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ VERDICT ============ -->
+<div class="verdictbox">
+  <div class="verdictbox-tag">What this GPA means for a US application</div>
+  <div aria-live="polite">
+    <p class="gverdict" id="verdict">3.4 clears the common 3.0 floor 鈥?<em>good standing</em> for most US master's programmes.</p>
+    <p class="gverdict-note" id="verdict-note">The percentage version of a GPA matters less than the GPA itself on a US application. Keep the transcript and grading key as your primary document; convert only when a form demands a percentage.</p>
+  </div>
+
+  <div class="gscale" id="gscale">
+    <div class="gtrack"></div>
+    <div id="gticks"></div>
+    <div class="you" id="you" style="left:0%">
+      <div class="you-dot"></div>
+      <div class="you-lab" id="you-lab">you 路 3.4</div>
+    </div>
+  </div>
+</div>
+
+<div class="related">
+  <span class="rel-tag">In the same family</span>
+  <a href="percentage-to-gpa.html">Percentage 鈫?GPA converter</a>
+  <a href="cgpa-to-gpa.html">CGPA 鈫?GPA converter</a>
+</div>
+
+<!-- ============ WHY REVERSE ISN'T EXACT ============ -->
+<section>
+  <h2>Why the reverse isn't exact</h2>
+  <p>The forward conversion maps wide percentage bands onto single GPA points. A 3.5 can be an 85, an 87, or anything else inside its band 鈥?so going backwards, the honest answer is a range. Anyone who gives you one precise percentage for a 3.4 is picking a convention, not reporting a fact.</p>
+
+  <div class="split">
+    <div>
+      <div class="sys-name">Linear</div>
+      <div class="unit">GPA 脳 25</div>
+      <p>3.4 鈫?85%. Clean, reproducible, and what most forms assume. It is a convention, not a conversion 鈥?it ignores that US grades are letters first.</p>
+    </div>
+    <div>
+      <div class="sys-name">Letter bands</div>
+      <div class="unit">B+ 鈮?85鈥?9%</div>
+      <p>3.4 is a B+, and B+ on a typical US 100-point scale is the 85鈥?9% band. This respects how grades actually work, at the cost of a single number.</p>
+    </div>
+  </div>
+
+  <p style="margin-top:20px">Use linear when a form forces one number, and use the band range when you want an honest answer. Label whatever you send with its method 鈥?'85% (GPA 3.4 脳 25)' 鈥?and keep the transcript as the primary document.</p>
+
+  <p style="margin-top:16px">If you're also converting credits for the same application, the credit pair lives over at <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a> and <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>.</p>
+</section>
+
+<!-- ============ METHODS ============ -->
+<section>
+  <h2>Three ways to run the conversion</h2>
+  <div class="cards">
+    <div class="card">
+      <div class="num">METHOD 01</div>
+      <h3>Linear 脳 25</h3>
+      <p>Multiply the GPA by 25. 3.0 鈫?75%, 3.4 鈫?85%, 3.7 鈫?92.5%. The standard assumption behind most percentage fields on application forms.</p>
+      <div class="formula">percentage = GPA 脳 25</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 02</div>
+      <h3>US letter-band range</h3>
+      <p>Read the GPA as a letter grade, then take the percentage range that grade occupies on a typical US scale. Output is a range because the input really is one.</p>
+      <div class="formula">3.4 = B+ 鈫?85鈥?9%</div>
+    </div>
+    <div class="card">
+      <div class="num">METHOD 03</div>
+      <h3>Your university formula</h3>
+      <p>If your institution publishes its own GPA鈫抪ercentage factor, use it. Their convention is the one that institution will recognise.</p>
+      <div class="formula">percentage = GPA 脳 your factor</div>
+    </div>
+  </div>
+
+  <div class="warn">
+    <h3>Don't let a converted percentage replace the transcript</h3>
+    <p>US admissions read the GPA and the grading key directly. A self-converted percentage is a convenience for forms, not a substitute document. If the programme accepts the GPA, report the GPA.</p>
+  </div>
+</section>
+
+<!-- ============ REFERENCE ============ -->
+<section>
+  <h2>GPA 鈫?letter 鈫?typical percentage</h2>
+  <table>
+    <thead>
+      <tr><th>GPA range</th><th>Letter</th><th>Typical % band</th><th>Linear 脳25</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>3.70 鈥?4.00</td><td>A / A鈭?/td><td>90 鈥?100</td><td>92.5 鈥?100</td></tr>
+      <tr><td>3.30 鈥?3.69</td><td>B+</td><td>85 鈥?89</td><td>82.5 鈥?92.3</td></tr>
+      <tr><td>3.00 鈥?3.29</td><td>B</td><td>80 鈥?84</td><td>75.0 鈥?82.3</td></tr>
+      <tr><td>2.70 鈥?2.99</td><td>B鈭?/td><td>75 鈥?79</td><td>67.5 鈥?74.8</td></tr>
+      <tr><td>2.30 鈥?2.69</td><td>C+</td><td>70 鈥?74</td><td>57.5 鈥?67.3</td></tr>
+      <tr><td>2.00 鈥?2.29</td><td>C</td><td>65 鈥?69</td><td>50.0 鈥?57.3</td></tr>
+      <tr><td>1.70 鈥?1.99</td><td>C鈭?/td><td>60 鈥?64</td><td>42.5 鈥?49.8</td></tr>
+      <tr><td>1.00 鈥?1.69</td><td>D</td><td>55 鈥?59</td><td>25.0 鈥?42.3</td></tr>
+      <tr><td>&lt; 1.00</td><td>F</td><td>0 鈥?54</td><td>0 鈥?24.9</td></tr>
+    </tbody>
+  </table>
+  <p style="margin-top:16px;font-size:14.5px;color:var(--muted)">Letter bands are the typical US 100-point convention; individual institutions vary. The linear column shows why the two methods diverge as GPA rises.</p>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section>
+  <h2>Questions students actually ask</h2>
+  <dl class="faq">
+    <div>
+      <dt>How do I convert a 4.0 GPA back to a percentage?</dt>
+      <dd>The common rule multiplies by 25 (3.4 鈫?85%). It's a convention, not an exact inverse 鈥?a GPA is an average of letter grades, and most institutions treat 3.4 as the 85鈥?9% band rather than an exact 85.</dd>
+    </div>
+    <div>
+      <dt>Is a 3.0 GPA equal to 75%?</dt>
+      <dd>By the linear rule, yes. On a US letter scale a 3.0 is a B, which typically sits in the 80鈥?4% range. The answer depends on which convention you convert through 鈥?that's the point of the three methods here.</dd>
+    </div>
+    <div>
+      <dt>Why can't I reverse a WES-style conversion exactly?</dt>
+      <dd>Because the forward conversion maps wide percentage bands onto single GPA points. Going backwards, one GPA can sit anywhere inside its band, so the honest output is a range.</dd>
+    </div>
+    <div>
+      <dt>What percentage is a 3.7 GPA?</dt>
+      <dd>92.5% by the linear rule. On the US letter scale a 3.7 is an A鈭? typically the 90鈥?4% range. Report whichever your target institution expects, and label the method.</dd>
+    </div>
+    <div>
+      <dt>Should I convert my US GPA to a percentage for a European application?</dt>
+      <dd>Usually not. European institutions read a US 4.0 transcript on their own terms; a self-converted percentage adds noise. If a form forces one, give the linear value and label it 'GPA 脳 25'.</dd>
+    </div>
+  </dl>
+</section>
+
+<!-- ============ SOURCES ============ -->
+<section>
+  <h2>Where these figures come from</h2>
+  <div class="sources">
+    <ul>
+      <li><span class="what">US letter / percentage scale</span><span class="who">Typical US institution 4.0 letter scale (90+ A 路 80鈥?9 B 路 70鈥?9 C 路 60鈥?9 D)</span></li>
+      <li><span class="what">Reverse-conversion caveat</span><span class="who">Inherent to band-based conversion 鈥?one GPA point spans a percentage range</span></li>
+    </ul>
+    <p class="verified">Figures last verified August 2026 路 Reverse conversions are conventions and ranges, not official standards</p>
+  </div>
+</section>
+
+</div>
+
+<footer class="site-foot">
+  <div class="foot-col">
+    <strong>Grade converters</strong>
+    <a href="grade-conversion.html">Grade conversion hub</a>
+    <a href="percentage-to-gpa.html">Percentage 鈫?GPA</a>
+    <a href="gpa-to-percentage.html">GPA 鈫?percentage</a>
+    <a href="cgpa-to-gpa.html">CGPA 鈫?GPA</a>
+  </div>
+  <div class="foot-col">
+    <strong>Credit converters</strong>
+    <a href="ects-to-us-credits.html">ECTS 鈫?US credits</a>
+    <a href="american-credit-hours-to-ects.html">US credits 鈫?ECTS</a>
+    <a href="credit-conversion.html">Credit conversion hub</a>
+  </div>
+  <div class="foot-col">
+    <strong>Language scores</strong>
+    <a href="ielts-to-toefl.html">IELTS 鈫?TOEFL</a>
+  </div>
+  <div class="foot-col">
+    <strong>Country guides</strong>
+    <a href="country-guides.html">All country guides</a>
+    <a href="germany-to-gpa.html">Germany</a>
+    <a href="netherlands-to-gpa.html">Netherlands</a>
+    <a href="france-to-gpa.html">France</a>
+    <a href="india-to-gpa.html">India</a>
+    <a href="china-to-gpa.html">China</a>
+  </div>
+  <p class="foot-note">Estimates only 鈥?formal recognition is decided by the receiving institution. Figures last verified <span data-year>2026</span>.</p>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  var $ = function(id){ return document.getElementById(id); };
+  var gpa = $('gpa'), factor = $('factor');
+  var pct = $('pct'), band = $('band'), mName = $('m-name'), points = $('points'), sum = $('sum');
+  var verdict = $('verdict'), vNote = $('verdict-note'), you = $('you'), youLab = $('you-lab'), gticks = $('gticks');
+
+  // letter from GPA + typical percentage band (US scale)
+  function bandOf(g){
+    if(g >= 3.7) return {l:'A', lo:90, hi:100};
+    if(g >= 3.3) return {l:'B+', lo:85, hi:89};
+    if(g >= 3.0) return {l:'B',  lo:80, hi:84};
+    if(g >= 2.7) return {l:'B鈭?, lo:75, hi:79};
+    if(g >= 2.3) return {l:'C+', lo:70, hi:74};
+    if(g >= 2.0) return {l:'C',  lo:65, hi:69};
+    if(g >= 1.7) return {l:'C鈭?, lo:60, hi:64};
+    if(g >= 1.0) return {l:'D',  lo:55, hi:59};
+    return {l:'F', lo:0, hi:54};
+  }
+
+  function currentMethod(){
+    var r = document.querySelector('input[name=method]:checked');
+    return r ? r.value : 'linear';
+  }
+
+  function renderTicks(){
+    gticks.innerHTML = '';
+    [[2.0,'pass'],[3.0,'common floor'],[3.5,'top-50 ideal'],[4.0,'maximum']].forEach(function(t){
+      var d = document.createElement('div');
+      d.className = 'gtick';
+      d.style.left = (t[0]/4*100) + '%';
+      d.innerHTML = '<div class="gtick-lab" style="left:0"><b>' + t[0] + '</b>' + t[1] + '</div>';
+      gticks.appendChild(d);
+    });
+  }
+
+  function writeVerdict(g){
+    var v, n;
+    if(!(g > 0)){
+      v = 'Enter a GPA to see where it lands.';
+      n = 'The scale runs 0鈥?.0, marked with the cutoffs most US graduate programmes actually use.';
+    } else if(g < 2.0){
+      v = 'Below <em>2.0</em> 鈥?under the floor for most US graduate programmes.';
+      n = 'At this level the rest of the application has to carry the load. Some programmes do look past the number.';
+    } else if(g < 3.0){
+      v = '<em>' + g.toFixed(2) + '</em> 鈥?passes a few programme floors, but most competitive admissions want more.';
+      n = 'The common 3.0 minimum is still ahead. Programmes that weigh the whole file rather than a cutoff are where a total like this competes.';
+    } else if(g < 3.5){
+      v = '<em>' + g.toFixed(2) + '</em> 鈥?clears the common 3.0 floor, good standing for most US master\u2019s programmes.';
+      n = 'Selective programmes and many top-50 departments start closer to 3.5. The exact decimals depend on the evaluator\u2019s course-by-course read.';
+    } else if(g < 3.7){
+      v = '<em>' + g.toFixed(2) + '</em> 鈥?competitive for selective programmes and most top-50 master\u2019s.';
+      n = 'You clear the informal 3.5 line used by many competitive departments.';
+    } else if(g < 4.0){
+      v = '<em>' + g.toFixed(2) + '</em> 鈥?strong, at the level most competitive programmes want.';
+      n = 'Firmly competitive across the board; the number is not the constraint.';
+    } else {
+      v = '<em>4.0</em> 鈥?the top of the scale.';
+      n = 'An exceptional record. The transcript behind it matters more than the last decimal.';
+    }
+    verdict.innerHTML = v;
+    vNote.textContent = n;
+  }
+
+  function compute(){
+    var method = currentMethod();
+    var g = parseFloat(gpa.value) || 0;
+    var name, out, sumTxt;
+
+    if(method === 'linear'){
+      name = 'Linear 脳25';
+      out = (g*25).toFixed(1).replace(/\.0$/,'');
+      sumTxt = 'direct linear value';
+    } else if(method === 'band'){
+      var b = bandOf(g);
+      name = 'US letter band';
+      out = b.lo + '鈥? + b.hi + '%';
+      sumTxt = 'range, not a point';
+    } else {
+      var f = parseFloat(factor.value) || 25;
+      name = 'GPA 脳' + f;
+      out = (g*f).toFixed(1).replace(/\.0$/,'');
+      sumTxt = 'university factor';
+    }
+
+    pct.innerHTML = out + '<span class="r-unit">%</span>';
+    band.innerHTML = bandOf(g).l + ' 路 ' + bandOf(g).lo + '鈥? + bandOf(g).hi + '%<span class="r-unit">US scale</span>';
+    mName.textContent = name;
+    points.textContent = g.toFixed(2);
+    sum.textContent = sumTxt;
+
+    var pct2 = (g/4)*100;
+    you.style.left = Math.max(0, Math.min(100, pct2)) + '%';
+    you.style.visibility = g > 0 ? 'visible' : 'hidden';
+    youLab.textContent = 'you 路 ' + g.toFixed(2);
+
+    writeVerdict(g);
+  }
+
+  var radios = document.querySelectorAll('input[name=method]');
+  Array.prototype.forEach.call(radios, function(r){
+    r.addEventListener('change', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.conv .m'), function(m){ m.classList.remove('on'); });
+      r.closest('.m').classList.add('on');
+      $('f-custom').classList.toggle('show', r.value === 'custom');
+      compute();
+    });
+  });
+
+  gpa.addEventListener('input', compute);
+  factor.addEventListener('change', compute);
+
+  renderTicks();
+  compute();
+})();
+</script>
+<script defer src="assets/js/site.js"></script>
+</body>
+</html>
